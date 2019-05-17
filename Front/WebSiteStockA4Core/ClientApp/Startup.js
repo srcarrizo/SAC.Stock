@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("core-js");
+require("reflect-metadata");
+require("zone.js/dist/zone");
+require("jquery");
+require("bootstrap-sass");
+var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
+var App_Module_1 = require("./Modules/App/App.Module");
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(App_Module_1.AppModule);

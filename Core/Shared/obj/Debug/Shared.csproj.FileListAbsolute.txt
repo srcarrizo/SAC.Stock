@@ -1,0 +1,9 @@
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\bin\Debug\SAC.Stock.Core.Shared.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\bin\Debug\SAC.Stock.Core.Shared.pdb
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\bin\Debug\SAC.Membership.Core.Shared.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\bin\Debug\SAC.Seed.Core.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\bin\Debug\SAC.Seed.NLayer.Core.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\Shared.csproj.CopyComplete
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\SAC.Stock.Core.Shared.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\SAC.Stock.Core.Shared.pdb

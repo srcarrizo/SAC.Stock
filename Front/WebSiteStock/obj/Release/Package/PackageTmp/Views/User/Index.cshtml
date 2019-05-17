@@ -1,0 +1,440 @@
+﻿@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/UserController")
+
+<div ng-controller="UserController" ng-cloak>
+    <h2>Usuarios</h2>
+
+    <button type="button" class="btn btn-primary" ng-click="newUser('newUser')" ng-disabled="loading">
+        {{loading ? 'Cargando... Por favor espere' : 'Agregar Usuarios'}}
+    </button>
+    <br /><br />
+
+    <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+    <p>Página actual: {{ gridApi.pagination.getPage() }} of {{ gridApi.pagination.getTotalPages() }}</p>
+    <button type="button" class="btn btn-success" ng-click="gridApi.pagination.previousPage()">
+        página anterior
+    </button>
+    <button type="button" class="btn btn-success" ng-click="gridApi.pagination.nextPage()">
+        siguiente página
+    </button>
+</div>
+
+
+<script type="text/ng-template" id="dialogOpenClose">
+    <md-dialog aria-label="Usuarios">
+        <form name="newUser" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background-color: #3f51b5">
+                    <h2>Usuarios</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-4">
+
+                                <md-input-container>
+                                    <label>Nombre</label>
+                                    <input ng-model="editUser.Staff.Person.FirstName" name="firstName" required>
+                                </md-input-container>
+
+                                <div ng-messages="newUser.firstName.$error" ng-if="newUser.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el nombre.</p>
+                                </div>
+
+                                <md-input-container>
+                                    <label>Apellido</label>
+                                    <input ng-model="editUser.Staff.Person.LastName" name="lastName" required>
+                                </md-input-container>
+
+                                <div ng-messages="newUser.lastName.$error" ng-if="newUser.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el apellido.</p>
+                                </div>
+
+                                <md-input-container>
+                                    <label>Fecha de nacimiento</label>
+                                    <md-datepicker name="birthDate" ng-model="editUser.Staff.Person.BirthDate" md-placeholder="Seleccione una fecha" required></md-datepicker>
+                                </md-input-container>
+
+                                <div ng-messages="newUser.birthDate.$error" ng-if="newUser.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese la fecha de nacimiento.</p>
+                                </div>
+
+                                <br />
+
+                                <md-input-container>
+                                    <label>Tipo Documento</label>
+                                    <md-select ng-model="editUser.Staff.Person.UidCode" name="uidCode" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="uid in uidCode" ng-value="uid">
+                                            {{uid.Code}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newUser.uidCode.$error" ng-if="newUser.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione el tipo de documento.</p>
+                                </div>
+
+                                <br />
+
+                                <md-input-container>
+                                    <label>Número de Documento</label>
+                                    <input type="number" ng-model="editUser.Staff.Person.UidSerie" name="uidSerie" required>
+                                </md-input-container>
+
+                                <div ng-messages="newUser.uidSerie.$error" ng-if="newUser.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el número de documento.</p>
+                                </div>
+
+
+                                <md-input-container>
+                                    <label>Email</label>
+                                    <input ng-model="editUser.Staff.Person.Email" name="email" type="email" required>
+                                </md-input-container>
+
+                                <div ng-messages="newUser.email.$error" ng-if="newUser.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el email.</p>
+                                </div>
+
+                                <br />
+                                <md-input-container>
+                                    <label>Sucursal</label>
+                                    <md-select ng-model="editUser.BranchOffice" name="branchOffice" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="bran in branchOfficeList" ng-value="bran">
+                                            {{bran.Name}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newUser.branchOffice.$error" ng-if="newBuy.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione una sucursal.</p>
+                                </div>
+
+                                <div class="col">
+                                    <div class="alert alert-info">
+
+                                        <label>Telefonos</label>
+                                        <br />
+                                        <div ng-repeat="phone in editUser.Staff.Person.Phones">
+
+                                            <md-input-container>
+                                                <label>Codigo de país</label>
+                                                <input ng-model="phone.CountryCode" name="countryCode" maxlength="6" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.countryCode.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese el código del país.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Codigo de area</label>
+                                                <input type="number" ng-model="phone.AreaCode" name="areaCode" maxlength="6" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.areaCode.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese el código de area.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Número</label>
+                                                <input type="number" ng-model="phone.Number" name="number" required>
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <md-switch ng-model="phone.Mobile" aria-label="Celular/Fijo">
+                                                    {{ phone.Mobile ?  'Celular' : 'Fijo' }}
+                                                </md-switch>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.number.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese el número.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Descripción</label>
+                                                <input ng-model="phone.Name" name="name" maxlength="100">
+                                            </md-input-container>
+
+                                            <br />
+                                            <md-input-container>
+                                                <label>Seleccione un operador</label>
+                                                <md-select ng-model="phone.Telco" name="telco" ng-change="setTelco(this.phone)" required>
+                                                    <md-option><em>Seleccione</em></md-option>
+                                                    <md-option ng-repeat="telco in telcoList" ng-value="telco">
+                                                        {{telco.Name}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.telco.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Seleccione un operador.</p>
+                                            </div>
+
+                                            <div ng-hide="error == null" role="alert">
+                                                <br />
+                                                <p style="color: red">{{error}}</p>
+                                            </div>
+                                        </div>
+
+                                        <br />
+                                        <md-button class="md-raised" ng-click="addPhone()" type="button">Agregar</md-button>
+                                        <md-button class="md-raised" ng-click="removePhone()" type="button">Eliminar</md-button>
+                                        <br />
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="alert alert-warning">
+
+                                        <label>Dirección</label>
+                                        <br />
+                                        <md-button class="md-raised md-primary" ng-if="editUser.Staff.Person.Address == null" ng-click="addAddress()" type="button">Agregar</md-button>
+                                        <md-button class="md-raised md-warn" ng-if="editUser.Staff.Person.Address != null" ng-click="removeAddress()" type="button">Eliminar</md-button>
+                                        <br />
+
+                                        <div ng-if="editUser.Staff.Person.Address != null">
+
+                                            <md-input-container>
+                                                <label>Calle</label>
+                                                <input ng-model="editUser.Staff.Person.Address.Street" name="street" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.street.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese la calle.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Número</label>
+                                                <input ng-model="editUser.Staff.Person.Address.StreetNumber" name="streetNumber" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.streetNumber.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese número.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Floor</label>
+                                                <input ng-model="editUser.Staff.Person.Address.Floor" name="floor">
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <label>Departamento</label>
+                                                <input ng-model="editUser.Staff.Person.Address.Apartment" name="apartment">
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <label>Barrio</label>
+                                                <input ng-model="editUser.Staff.Person.Address.Neighborhood" name="neighborhood">
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <label>Código postal</label>
+                                                <input ng-model="editUser.Staff.Person.Address.ZipCode" name="zipCode" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.zipCode.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese código postal.</p>
+                                            </div>
+
+                                            <br />
+                                            <md-input-container>
+                                                <label>Seleccione un país</label>
+                                                <md-select ng-model="editUser.Staff.Person.Address.LocationCountry" name="location" ng-change="setCountryAsLocation(editUser.Staff.Person.Address)" required>
+                                                    <md-option><em>Seleccione</em></md-option>
+                                                    <md-option ng-repeat="country in countryList" ng-value="country">
+                                                        {{country.Name}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+
+                                            <div ng-messages="newUser.location.$error" ng-if="newUser.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Seleccione un pais.</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <md-input-container>
+                                                    <label>Seleccione una provincia</label>
+                                                    <md-select ng-model="editUser.Staff.Person.Address.LocationState" name="location" ng-change="setStateAsLocation(editUser.Staff.Person.Address)" required>
+                                                        <md-option><em>Seleccione</em></md-option>
+                                                        <md-option ng-repeat="state in stateList" ng-value="state">
+                                                            {{state.Name}}
+                                                        </md-option>
+                                                    </md-select>
+                                                </md-input-container>
+
+                                                <div ng-messages="newUser.location.$error" ng-if="newUser.$submitted" role="alert">
+                                                    <p style="color: red" ng-message="required">Seleccione un provincia.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <md-input-container>
+                                                    <label>Seleccione una ciudad</label>
+                                                    <md-select ng-model="editUser.Staff.Person.Address.LocationCity" name="location" ng-change="setCityAsLocation(editUser.Staff.Person.Address)" required>
+                                                        <md-option><em>Seleccione</em></md-option>
+                                                        <md-option ng-repeat="city in cityList" ng-value="city">
+                                                            {{city.Name}}
+                                                        </md-option>
+                                                    </md-select>
+                                                </md-input-container>
+
+                                                <div ng-messages="newUser.location.$error" ng-if="newUser.$submitted" role="alert">
+                                                    <p style="color: red" ng-message="required">Seleccione un provincia.</p>
+                                                </div>
+                                            </div>
+
+                                            <div ng-hide="error == null" role="alert">
+                                                <br />
+                                                <p style="color: red">{{error}}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col col-lg-4">
+                                <md-radio-group class="md-primary">
+                                    <div class="alert alert-info">
+                                        <strong>Perfiles de Usuraios</strong>
+                                        <br /><br />
+
+                                        <div ng-if="staffRoleCodeError != null" role="alert">                                            
+                                            <p style="color: red">{{staffRoleCodeError}}</p>
+                                        </div>                                        
+
+                                        <md-radio-button ng-repeat="profile in rolesComposition"
+                                                         ng-value="profile.StaffRoleItem.Code"
+                                                         ng-click="fillRoles(profile.StaffRoleItem.Code)">
+                                            <h4><strong>{{ profile.StaffRoleItem.Name }}</strong></h4> <br /> {{profile.StaffRoleItem.Description}}
+                                        </md-radio-button>
+                                    </div>
+                                </md-radio-group>
+                            </div>
+
+                            <div class="col col-lg-4">
+                                <div class="alert alert-warning" ng-if="selectedProfile != null">
+                                    <strong> Roles del perfil {{selectedProfile}} </strong>
+                                    <br /><br />
+                                    <md-checkbox aria-label="Seleccionar todos"
+                                                 ng-checked="isChecked(profilesRoles)"
+                                                 md-indeterminate="isIndeterminate()"
+                                                 ng-click="toggleAll(profilesRoles)" checked="true">
+                                        Seleccionar todos
+                                    </md-checkbox>
+                                    <div ng-repeat="profileRol in profilesRoles | orderBy: 'Hierarchy'">
+                                        <md-checkbox ng-checked="exists(profileRol, selectedRoles)" ng-click="toggle(profileRol, selectedRoles)">
+                                            <strong>{{profileRol.RoleName}}</strong> <br /> {{profileRol.RoleDescription}}
+                                        </md-checkbox>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-warning" ng-if="selectedProfile != null && otherRoles.length > 0">
+                                    <strong> Otros roles del del sistema </strong>
+                                    <br /><br />
+                                    <md-checkbox aria-label="Seleccionar todos"
+                                                 ng-checked="isChecked(otherRoles)"
+                                                 md-indeterminate="isIndeterminate()"
+                                                 ng-click="toggleAll(otherRoles)">
+                                        Seleccionar todos
+                                    </md-checkbox>
+                                    <div ng-repeat="rol in otherRoles | orderBy: 'Hierarchy'">
+                                        <md-checkbox ng-checked="exists(rol, selectedRoles)" ng-click="toggle(rol, selectedRoles)">
+                                            <strong>{{rol.RoleName}}</strong> <br /> {{rol.RoleDescription}}
+                                        </md-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="confirmUser('newUser')">
+                    Aceptar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+
+
+<script type="text/ng-template" id="dialogOpenCloseResult">
+    <md-dialog aria-label="Usuarios">
+        <form name="result" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background-color: #3f51b5">
+                    <h2>Nuevo Usuarios</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="alert alert-info">
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="col col-lg-4">
+                                            Nombre: <strong>{{resultUser.Staff.Person.FirstName}}</strong>
+                                            <br />
+                                            Apellido: <strong>{{resultUser.Staff.Person.LastName}}</strong>
+                                        </div>
+
+                                        <div class="col col-lg-4">
+                                            Tipo Documento: <strong>{{resultUser.Staff.Person.UidCode}}</strong>
+                                            <br />
+                                            Número de Documento: <strong>{{resultUser.Staff.Person.UidSerie}}</strong>
+                                        </div>
+
+                                        <div class="col col-lg-4">
+                                            Email: <strong>{{resultUser.Staff.Person.Email}}</strong>
+                                            <br />
+                                            Sucursal: <strong>{{resultUser.BranchOffice.Name}}</strong>
+                                        </div>
+
+                                        <div class="col col-lg-4">
+                                        </div>                                       
+
+                                        <div class="col col-lg-4">
+                                            <br /><br />
+                                            Perfil de usuario: <strong>{{resultUser.StaffRoleName}}</strong>
+                                            <br />
+                                            Nombre de usuario: <strong>{{resultUser.UserName}}</strong>
+                                            <br />
+                                            Contraseña: <strong>{{resultUser.UserName}}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                                    
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="acept('newUser')">
+                    Aceptar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>

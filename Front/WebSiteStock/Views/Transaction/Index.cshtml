@@ -1,0 +1,172 @@
+﻿
+@{
+    ViewBag.Title = "Gastos e Ingresos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/TransactionController")
+
+<h2>Gastos Comunes</h2>
+
+<div class="md-padding dialog" ng-controller="TransactionController" id="popupContainer" ng-cloak>
+    <div ng-show="listView" class="animate-show-hide">
+        <button type="button" class="btn" ng-click="changeViews('new')" ng-disabled="loading" ng-text-change="if: loading('cargando')">
+            Agregar Nueva Venta
+        </button>
+        <br /><br />
+
+        <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+        <div class="alert alert-warning" ng-hide="box.Detail != null">
+            <strong>Total Ingresos: </strong> {{TotalIn}}
+            <br />
+            <strong>Total Gastos: </strong> {{TotalOut}}
+        </div>
+
+        <br /><br />
+
+        <h3>Historial</h3>
+        <div ui-grid="gridOptionsHistorial" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+    </div>
+
+        <div ng-show="newView" class="animate-show-hide">
+            <form name="newTransaction" ng-submit="saveNew()" novalidate>
+                <div class="container">
+                    <div layout-gt-xs="row">
+                        <div flex-gt-xs="">
+                            <div class="row">
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Nombre</label>
+                                        <input ng-model="transaction.Name" name="name" maxlength="120" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newTransaction.name.$error" ng-if="newTransaction.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Ingrese el nombre.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Descripción</label>
+                                        <textarea ng-model="transaction.Description" md-maxlength="150" rows="5" md-select-on-focus=""></textarea>
+                                    </md-input-container>
+                                </div>
+
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Sucursal</label>
+                                        <md-select ng-model="transaction.BranchOffice" name="branchOffice" required>
+                                            <md-option><em>Seleccione</em></md-option>
+                                            <md-option ng-repeat="bran in branchOfficesList" ng-value="bran">
+                                                {{bran.Name}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                    <div ng-messages="newTransaction.branchOffice.$error" ng-if="newTransaction.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Seleccione una sucursal.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Empleado</label>
+                                        <md-select ng-model="transaction.BranchOfficeStaff" name="employee" required>
+                                            <md-option><em>Seleccione</em></md-option>
+                                            <md-option ng-repeat="empl in employeesList" ng-value="empl">
+                                                {{empl.Staff.Person.LastName}}, {{empl.Staff.Person.FirstName}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                    <div ng-messages="newTransaction.employee.$error" ng-if="newTransaction.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Seleccione un empleado.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Tipo I/E</label>
+                                        <md-switch ng-model="transaction.TransactionTypeInOut" aria-label="Ingreso/Egreso">
+                                            {{ transaction.TransactionTypeInOut ? 'Ingreso' : 'Egreso' }}
+                                        </md-switch>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <label>Detalle</label>
+                <br />
+                <div ng-repeat="detail in transaction.Detail">
+                    <div layout-gt-xs="row">
+                        <md-input-container>
+                            <label>Seleccione un Item</label>
+                            <md-select ng-model="detail.Bill" name="bill" required>
+                                <md-option><em>Seleccione</em></md-option>
+                                <md-option ng-repeat="bill in billsList" ng-value="bill">
+                                    {{bill.BillUnitType.Name}} de {{bill.Value}} {{bill.BillUnitType.IsDecimal ? 'Centavo(s)' : 'Peso(s)'}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <br />
+                        <div ng-messages="detail.bill.$error" ng-if="newTransaction.$submitted" role="alert">
+                            <p style="color: red" ng-message="required">Seleccione un elemento.</p>
+                        </div>
+
+                        <div ng-hide="errorDetail == null" role="alert">
+                            <br />
+                            <p style="color: red">{{errorDetail}}</p>
+                        </div>
+
+                        <md-input-container>
+                            <label>Cantidad</label>
+                            <input type="number" ng-model="detail.Amount" min="0" name="amount" required>
+                        </md-input-container>
+
+                        <md-input-container>
+                            <label>SubTotal</label>
+                            <input type="number" min="0" ng-value="detail.Bill.BillUnitType.IsDecimal ? ((detail.Amount * detail.Bill.Value) / 100) : (detail.Amount * detail.Bill.Value)" readonly>
+                        </md-input-container>
+
+                        <md-button class="btn md-warn" ng-click="removeDetail($index)">Eliminar</md-button>
+                    </div>
+                </div>
+                <br />
+                <md-button class="md-raised" ng-click="addDetail()" type="button">Agregar</md-button>
+                <md-button class="md-raised" ng-click="removeDetail()" type="button">Eliminar</md-button>
+                <br /><br />
+                <label>Total</label>
+
+                {{getTotal()}}
+
+                <br />
+                <button type="submit" class="btn">
+                    Aceptar
+                </button>
+                <button type="button" class="btn" ng-click="changeViews('list')">
+                    Cancelar y Volver
+                </button>
+            </form>
+        </div>
+
+        <div ng-if="resultView" class="animate-show-hide">
+            Movimiento Registrado       
+            <br /><br />
+            <label>Fecha: </label> {{transaction.TransactionDate}}
+            <br /><br />
+            <label>Sucursal: </label> {{transaction.BranchOffice.Name}} <label>Empleado: </label> {{transaction.BranchOfficeStaff.Staff.Person.LastName}}, {{transaction.BranchOfficeStaff.Staff.Person.FirstName}}            
+            <br /><br />
+            <label>Tipo: </label> {{transaction.TransactionTypeInOut ? 'Ingreso' : 'Egreso'}}
+            <br /><br />
+            <strong>Total: </strong> {{getTotal()}}
+            <br /><br />
+            <button type="button" class="btn" ng-click="changeViews('list')">
+                Volver
+            </button>
+        </div>
+    </div>

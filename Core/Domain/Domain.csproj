@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B6ADBEB-C57C-4E98-9706-4D9E50C31338}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAC.Stock</RootNamespace>
+    <AssemblyName>SAC.Stock.Core.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Membership.Core.Shared">
+      <HintPath>..\..\..\SAC.Membership\Assemblies\SAC.Membership.Core.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.Core">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.Extend.Validator.DataAnnotations">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.Extend.Validator.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.NLayer.Core">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.NLayer.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.NLayer.Extend.Data.EntityFramework">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.NLayer.Extend.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\AttributeValueContext\AttributeValue.cs" />
+    <Compile Include="Domain\AttributeValueContext\AttributeValueAdapter.cs" />
+    <Compile Include="Domain\AttributeValueContext\AttributeValueService.cs" />
+    <Compile Include="Domain\BillContext\Bill.cs" />
+    <Compile Include="Domain\BillContext\BillAdapter.cs" />
+    <Compile Include="Domain\BillContext\BillService.cs" />
+    <Compile Include="Domain\BillContext\BillUnitType.cs" />
+    <Compile Include="Domain\BoxContext\Box.cs" />
+    <Compile Include="Domain\BoxContext\BoxAdapter.cs" />
+    <Compile Include="Domain\BoxContext\BoxDetail.cs" />
+    <Compile Include="Domain\BoxContext\BoxService.cs" />
+    <Compile Include="Domain\BranchOfficeContext\BranchOffice.cs" />
+    <Compile Include="Domain\BranchOfficeContext\BranchOfficeAdapter.cs" />
+    <Compile Include="Domain\BranchOfficeContext\BranchOfficePhone.cs" />
+    <Compile Include="Domain\BranchOfficeContext\BranchOfficeService.cs" />
+    <Compile Include="Domain\BranchOfficeContext\BranchOfficeStaff.cs" />
+    <Compile Include="Domain\BudgetContext\Budget.cs" />
+    <Compile Include="Domain\BudgetContext\BudgetAdapter.cs" />
+    <Compile Include="Domain\BudgetContext\BudgetDetail.cs" />
+    <Compile Include="Domain\BudgetContext\BudgetService.cs" />
+    <Compile Include="Domain\BuyContext\Buy.cs" />
+    <Compile Include="Domain\BuyContext\BuyAdapter.cs" />
+    <Compile Include="Domain\BuyContext\BuyDetail.cs" />
+    <Compile Include="Domain\BuyContext\BuyService.cs" />
+    <Compile Include="Domain\CustomerContext\Customer.cs" />
+    <Compile Include="Domain\CustomerContext\CustomerAdapter.cs" />
+    <Compile Include="Domain\CustomerContext\CustomerService.cs" />
+    <Compile Include="Domain\Infrastructure\DomainService.cs" />
+    <Compile Include="Domain\Infrastructure\TokenIdentity.cs" />
+    <Compile Include="Domain\Infrastructure\UserLink.cs" />
+    <Compile Include="Domain\PhoneContext\PhoneService.cs" />
+    <Compile Include="Domain\ProductContext\Container.cs" />
+    <Compile Include="Domain\LocationContext\Address.cs" />
+    <Compile Include="Domain\ProductContext\Category.cs" />
+    <Compile Include="Domain\ProductContext\Area.cs" />
+    <Compile Include="Domain\LocationContext\Location.cs" />
+    <Compile Include="Domain\LocationContext\LocationAdapter.cs" />
+    <Compile Include="Domain\LocationContext\LocationService.cs" />
+    <Compile Include="Domain\PersonContext\Person.cs" />
+    <Compile Include="Domain\PersonContext\PersonAdapter.cs" />
+    <Compile Include="Domain\PersonContext\PersonAttributeValue.cs" />
+    <Compile Include="Domain\PersonContext\PersonPhone.cs" />
+    <Compile Include="Domain\PersonContext\PersonService.cs" />
+    <Compile Include="Domain\PhoneContext\Phone.cs" />
+    <Compile Include="Domain\PhoneContext\PhoneAdapter.cs" />
+    <Compile Include="Domain\PhoneContext\Telco.cs" />
+    <Compile Include="Domain\ProductContext\ContainerAdapter.cs" />
+    <Compile Include="Domain\ProductContext\Product.cs" />
+    <Compile Include="Domain\ProductContext\ProductAdapter.cs" />
+    <Compile Include="Domain\ProductContext\ProductPrice.cs" />
+    <Compile Include="Domain\ProductContext\ProductService.cs" />
+    <Compile Include="Domain\ProfileContext\Profile.cs" />
+    <Compile Include="Domain\ProfileContext\ProfileAdapter.cs" />
+    <Compile Include="Domain\ProfileContext\ProfileService.cs" />
+    <Compile Include="Domain\ProfileContext\RolesComposition.cs" />
+    <Compile Include="Domain\ProviderContext\Provider.cs" />
+    <Compile Include="Domain\ProviderContext\ProviderAdapter.cs" />
+    <Compile Include="Domain\ProviderContext\ProviderService.cs" />
+    <Compile Include="Domain\SaleContext\Sale.cs" />
+    <Compile Include="Domain\SaleContext\SaleAdapter.cs" />
+    <Compile Include="Domain\SaleContext\SaleDetail.cs" />
+    <Compile Include="Domain\SaleContext\SaleService.cs" />
+    <Compile Include="Domain\StaffContext\Staff.cs" />
+    <Compile Include="Domain\ProductContext\SubCategory.cs" />
+    <Compile Include="Domain\StaffContext\StaffAdapter.cs" />
+    <Compile Include="Domain\StaffContext\StaffService.cs" />
+    <Compile Include="Domain\StockContext\Stock.cs" />
+    <Compile Include="Domain\StockContext\StockAdapter.cs" />
+    <Compile Include="Domain\StockContext\StockDetail.cs" />
+    <Compile Include="Domain\StockContext\StockService.cs" />
+    <Compile Include="Domain\TransactionContext\Transaction.cs" />
+    <Compile Include="Domain\TransactionContext\TransactionAdapter.cs" />
+    <Compile Include="Domain\TransactionContext\TransactionDetail.cs" />
+    <Compile Include="Domain\TransactionContext\TransactionService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.Query\Domain.Query.csproj">
+      <Project>{dcc1876c-4f2c-4508-a411-9377222e20c6}</Project>
+      <Name>Domain.Query</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{adad7401-50eb-426b-808e-f33660ea3b51}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

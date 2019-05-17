@@ -1,0 +1,287 @@
+﻿
+@{
+    ViewBag.Title = "Caja";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/BoxController")
+
+<h2>Caja</h2>
+<div class="container">
+    <div class="row">
+
+        <div class="col md-padding dialog" ng-controller="BoxController" id="popupContainer" ng-cloak>
+            <div ng-if="box">
+                <div class="alert alert-danger" ng-hide="openingClosing" ng-disabled="loading">
+                    <strong>Caja cerrada.</strong> Abra Caja e indique el detalle del tesoro.
+                </div>
+
+                <div class="alert alert-info" ng-hide="!openingClosing" ng-disabled="loading">
+                    <strong>Caja abierta.</strong> Cierre Caja e indique el detalle del tesoro.
+                </div>
+
+                <button type="button" class="btn btn-primary" ng-hide="openingClosing" ng-click="processBox('openBox')">
+                    Abrir Caja
+                </button>
+
+                <button type="button" class="btn btn-danger" ng-hide="!openingClosing" ng-click="processBox('closeBox')">
+                    Cerrar Caja
+                </button>
+
+                <br /><br />
+
+                <div class="alert alert-warning" ng-hide="box.Detail != null">
+                    <strong>No hay caja previa.</strong> No hay detalle a mostrar.
+                </div>
+
+                <div ng-if="box.Detail != null">
+                    <strong>Detalle:</strong>
+                    <br />
+                    <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+                    <br />
+                    <div class="alert alert-warning">
+                        <strong>Total: </strong>${{ calcTotal(box) | number:2 }} <br />
+                        <strong>Compras no procesadas: </strong>{{ boxCompleted.UnprocessedBuys.Buys.length }} - <strong>Total: </strong>${{ boxCompleted.UnprocessedBuys.Total | number:2 }} <br />
+                        <strong>Ventas no procesadas: </strong>{{ boxCompleted.UnprocessedSales.Sales.length }} - <strong>Total: </strong>${{ boxCompleted.UnprocessedSales.Total | number:2 }} <br />
+                        <strong>Ingresos/Egresos no procesados: </strong>{{ boxCompleted.UnprocessedTransactions.Transactions.length }} - <strong>Total Ingresos: </strong>${{ boxCompleted.UnprocessedTransactions.TotalIn | number:2 }} - <strong>Total Gastos: </strong>${{ boxCompleted.UnprocessedTransactions.TotalOut | number:2 }}
+                    </div>
+                    <div class="alert alert-info">
+                        <strong>Reservas: </strong> {{boxCompleted.UnprocessedSales.PreSales.length}} - <strong>Total: </strong>${{ boxCompleted.UnprocessedSales.PreSaleTotal | number:2 }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/ng-template" id="dialogOpenClose">
+    <md-dialog aria-label="Caja">
+        <form name="newBox" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools" ng-style="(!openingClosing) ? { 'background-color':'#3f51b5' } : { 'background-color':'#ac2925' }">
+                    <h2 ng-hide="(openingClosing)">Abrir Caja</h2>
+                    <h2 ng-hide="(!openingClosing)">Cerrar Caja</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="col" ng-if="!openingClosing">
+                                    <label>Fecha apertura</label>
+                                    <label>{{editBox.OpenDate}}</label>
+                                </div>
+
+                                <div class="col" ng-if="openingClosing">
+                                    <label>Fecha cierre</label>
+                                    <label>{{editBox.CloseDate}}</label>
+                                </div>
+
+                                <div class="col" ng-if="!openingClosing">
+                                    <md-input-container>
+                                        <label>Nota de apertura</label>
+                                        <textarea ng-model="editBox.OpenNote" name="openNote" md-maxlength="150" rows="5" md-select-on-focus required></textarea>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBox.openNote.$error" ng-if="newBox.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya nota de apertura.</p>
+                                    </div>
+
+                                    <div role="alert" ng-hide="error == null">
+                                        <p style="color: red">{{error}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="col" ng-if="openingClosing">
+                                    <md-input-container>
+                                        <label>Nota de cierre</label>
+                                        <textarea ng-model="editBox.CloseNote" name="closeNote" md-maxlength="150" rows="5" md-select-on-focus required></textarea>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBox.closeNote.$error" ng-if="newBox.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya nota de cierre.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <label>Detalle</label>
+                                    <br />
+                                    <div ng-repeat="detail in editBox.Detail">
+                                        <div layout-gt-xs="row">
+                                            <md-input-container>
+                                                <label>Seleccione un Item</label>
+                                                <md-select ng-model="detail.Bill" name="bill" ng-model-options="{trackBy: '$value.Id'}" required>
+                                                    <md-option><em>Seleccione</em></md-option>
+                                                    <md-option ng-repeat="bill in billsList" ng-value="bill">
+                                                        {{bill.BillUnitType.Name}} de {{bill.Value}} {{bill.BillUnitType.IsDecimal ? 'Centavo(s)' : 'Peso(s)'}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+
+                                            <br />
+                                            <div ng-messages="detail.bill.$error" ng-if="newSale.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Seleccione un elemento.</p>
+                                            </div>
+
+                                            <div ng-hide="errorDetail == null" role="alert">
+                                                <br />
+                                                <p style="color: red">{{errorDetail}}</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Cantidad</label>
+                                                <input type="number" ng-model="detail.Amount" min="0" name="amount" ng-blur="checkStock(this.detail)" required>
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <label>SubTotal</label>
+                                                <input type="number" min="0" ng-value="(detail.Bill != null) && (detail.Bill.BillUnitType != null) && detail.Bill.BillUnitType.IsDecimal ? ((detail.Amount * detail.Bill.Value) / 100) : (detail.Amount * detail.Bill.Value)" readonly>
+                                            </md-input-container>
+
+                                            <md-button class="btn md-warn" ng-click="removeDetail($index)">Eliminar</md-button>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <md-button class="md-raised" ng-click="addDetail()" type="button">Agregar</md-button>
+                                    <md-button class="md-raised" ng-click="removeDetail()" type="button">Eliminar</md-button>
+                                    <br />
+                                    <br />
+                                    <div class="alert alert-info">
+                                        <strong>Total: </strong>
+                                        ${{getTotal() | number:2}}
+                                    </div>
+
+                                    <div class="col" ng-if="openingClosing">
+                                        <div class="alert alert-info">
+                                            <label>Indicar Retiro</label>
+                                            <input type="number" ng-model="editBox.Withdrawal" min="0" max="{{calcTotal(box) + boxCompleted.UnprocessedSales.Total + boxCompleted.UnprocessedTransactions.TotalIn - boxCompleted.UnprocessedTransactions.TotalOut - boxCompleted.UnprocessedBuys.Total}}" name="amount" ng-blur="checkStock(this.detail)" required> - Saldo: {{calcTotal(box) + boxCompleted.UnprocessedSales.Total + boxCompleted.UnprocessedTransactions.TotalIn - boxCompleted.UnprocessedTransactions.TotalOut - boxCompleted.UnprocessedBuys.Total - editBox.Withdrawal | number: 2}}
+                                            <br /><br />
+                                            <strong>Si realiza un retiro, verique saldo en caja.</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="alert alert-warning">
+                                    <table>
+                                        <tr>
+                                            <td><strong>Saldo Anterior:  </strong></td>
+                                            <td style="text-align: right;">{{ calcTotal(box) | number:2 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>- Total Compras:</strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ boxCompleted.UnprocessedBuys.Total | number:2 }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>+ Total Ventas:</strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ boxCompleted.UnprocessedSales.Total | number:2 }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Gancia:</strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ calcTotal(box) - boxCompleted.UnprocessedBuys.Total + boxCompleted.UnprocessedSales.Total | number:2 }}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="alert alert-warning">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <strong>Gancia:</strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ calcTotal(box) - boxCompleted.UnprocessedBuys.Total + boxCompleted.UnprocessedSales.Total | number:2 }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong> - Total Gastos: </strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ boxCompleted.UnprocessedTransactions.TotalOut | number:2 }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Gancia real:</strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ calcTotal(box) - boxCompleted.UnprocessedBuys.Total + boxCompleted.UnprocessedSales.Total - boxCompleted.UnprocessedTransactions.TotalOut| number:2 }}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div ng-show="(calcTotal(box) + boxCompleted.UnprocessedSales.Total + boxCompleted.UnprocessedTransactions.TotalIn - boxCompleted.UnprocessedTransactions.TotalOut - boxCompleted.UnprocessedBuys.Total) < 0" class="alert alert-danger">
+                                    <strong>Saldo negativo, verique operaciones.</strong>
+                                </div>
+
+                                <div class="alert alert-success">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <strong>Gancia real:</strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ calcTotal(box) - boxCompleted.UnprocessedBuys.Total + boxCompleted.UnprocessedSales.Total - boxCompleted.UnprocessedTransactions.TotalOut| number:2 }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong> + Total Ingresos: </strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                {{ boxCompleted.UnprocessedTransactions.TotalIn | number:2 }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <strong>Saldo Estimado:</strong>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                <strong>{{calcTotal(box) + boxCompleted.UnprocessedSales.Total + boxCompleted.UnprocessedTransactions.TotalIn - boxCompleted.UnprocessedTransactions.TotalOut - boxCompleted.UnprocessedBuys.Total | number:2}}</strong>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="alert alert-warning">
+                                    <strong> ? Total Reservas: (Se ignora) </strong>{{ boxCompleted.UnprocessedSales.PreSaleTotal | number:2 }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-if="(!openingClosing)" ng-click="confirmBox('openBox')">
+                    Confirmar y Abrir Caja
+                </button>
+                <button type="submit" class="btn btn-danger" ng-if="(openingClosing)" ng-click="confirmBox('closeBox')">
+                    Confirmar y Cerrar Caja
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>

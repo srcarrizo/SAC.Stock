@@ -1,0 +1,356 @@
+﻿@{
+    ViewBag.Title = "Proveedores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/ProviderController")
+
+<div ng-controller="ProviderController" ng-cloak>
+    <h2>Proveedores</h2>
+    
+    <button type="button" class="btn btn-primary" ng-click="newProvider('newProvider')" ng-disabled="loading">
+        {{loading ? 'Cargando... Por favor espere' : 'Agregar Proveedores'}}
+    </button>
+    <br /><br />
+
+    <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+    <p>Página actual: {{ gridApi.pagination.getPage() }} of {{ gridApi.pagination.getTotalPages() }}</p>
+    <button type="button" class="btn btn-success" ng-click="gridApi.pagination.previousPage()">
+        página anterior
+    </button>
+    <button type="button" class="btn btn-success" ng-click="gridApi.pagination.nextPage()">
+        siguiente página
+    </button>
+</div>
+
+<script type="text/ng-template" id="dialogOpenClose">
+    <md-dialog aria-label="Proveedores">
+        <form name="newProvider" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background-color: #3f51b5">
+                    <h2>Proveedores</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-4">
+
+                                <md-input-container>
+                                    <label>Nombre</label>
+                                    <input ng-model="editProvider.FirstName" name="firstName" required>
+                                </md-input-container>
+
+                                <div ng-messages="newProvider.firstName.$error" ng-if="newProvider.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el nombre.</p>
+                                </div>
+
+                                <md-input-container>
+                                    <label>Apellido</label>
+                                    <input ng-model="editProvider.LastName" name="lastName" required>
+                                </md-input-container>
+
+                                <div ng-messages="newProvider.lastName.$error" ng-if="newProvider.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el apellido.</p>
+                                </div>
+
+                                <md-input-container>
+                                    <label>Fecha de nacimiento</label>
+                                    <md-datepicker name="birthDate" ng-model="editProvider.BirthDate" md-placeholder="Seleccione una fecha" required></md-datepicker>
+                                </md-input-container>
+
+                                <div ng-messages="newProvider.birthDate.$error" ng-if="newProvider.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese la fecha de nacimiento.</p>
+                                </div>
+
+                                <br />
+
+                                <md-input-container>
+                                    <label>Tipo Documento</label>
+                                    <md-select ng-model="editProvider.UidCode" name="uidCode" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="uid in uidCode" ng-value="uid">
+                                            {{uid.Code}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newProvider.uidCode.$error" ng-if="newProvider.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione el tipo de documento.</p>
+                                </div>
+
+                                <br />
+
+                                <md-input-container>
+                                    <label>Número de Documento</label>
+                                    <input type="number" ng-model="editProvider.UidSerie" name="uidSerie" required>
+                                </md-input-container>
+
+                                <div ng-messages="newProvider.uidSerie.$error" ng-if="newProvider.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el número de documento.</p>
+                                </div>
+
+
+                                <md-input-container>
+                                    <label>Email</label>
+                                    <input ng-model="editProvider.Email" name="email" type="email" required>
+                                </md-input-container>
+
+                                <div ng-messages="newProvider.email.$error" ng-if="newProvider.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Ingrese el email.</p>
+                                </div>
+
+                                <div class="col">
+                                    <div class="alert alert-info">
+
+                                        <label>Telefonos</label>
+                                        <br />
+                                        <div ng-repeat="phone in editProvider.Phones">
+
+                                            <md-input-container>
+                                                <label>Codigo de país</label>
+                                                <input ng-model="phone.CountryCode" name="countryCode" maxlength="6" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.countryCode.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese el código del país.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Codigo de area</label>
+                                                <input type="number" ng-model="phone.AreaCode" name="areaCode" maxlength="6" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.areaCode.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese el código de area.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Número</label>
+                                                <input type="number" ng-model="phone.Number" name="number" required>
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <md-switch ng-model="phone.Mobile" aria-label="Celular/Fijo">
+                                                    {{ phone.Mobile ?  'Celular' : 'Fijo' }}
+                                                </md-switch>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.number.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese el número.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Descripción</label>
+                                                <input ng-model="phone.Name" name="name" maxlength="100">
+                                            </md-input-container>
+
+                                            <br />
+                                            <md-input-container>
+                                                <label>Seleccione un operador</label>
+                                                <md-select ng-model="phone.Telco" name="telco" ng-change="setTelco(this.phone)" required>
+                                                    <md-option><em>Seleccione</em></md-option>
+                                                    <md-option ng-repeat="telco in telcoList" ng-value="telco">
+                                                        {{telco.Name}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.telco.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Seleccione un operador.</p>
+                                            </div>
+
+                                            <div ng-hide="error == null" role="alert">
+                                                <br />
+                                                <p style="color: red">{{error}}</p>
+                                            </div>
+                                        </div>
+
+                                        <br />
+                                        <md-button class="md-raised" ng-click="addPhone()" type="button">Agregar</md-button>
+                                        <md-button class="md-raised" ng-click="removePhone()" type="button">Eliminar</md-button>
+                                        <br />
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="alert alert-warning">
+
+                                        <label>Dirección</label>
+                                        <br />
+                                        <md-button class="md-raised md-primary" ng-if="editProvider.Address == null" ng-click="addAddress()" type="button">Agregar</md-button>
+                                        <md-button class="md-raised md-warn" ng-if="editProvider.Address != null" ng-click="removeAddress()" type="button">Eliminar</md-button>
+                                        <br />
+
+                                        <div ng-if="editProvider.Address != null">
+
+                                            <md-input-container>
+                                                <label>Calle</label>
+                                                <input ng-model="editProvider.Address.Street" name="street" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.street.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese la calle.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Número</label>
+                                                <input ng-model="editProvider.Address.StreetNumber" name="streetNumber" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.streetNumber.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese número.</p>
+                                            </div>
+
+                                            <md-input-container>
+                                                <label>Floor</label>
+                                                <input ng-model="editProvider.Address.Floor" name="floor">
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <label>Departamento</label>
+                                                <input ng-model="editProvider.Address.Apartment" name="apartment">
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <label>Barrio</label>
+                                                <input ng-model="editProvider.Address.Neighborhood" name="neighborhood">
+                                            </md-input-container>
+
+                                            <md-input-container>
+                                                <label>Código postal</label>
+                                                <input ng-model="editProvider.Address.ZipCode" name="zipCode" required>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.zipCode.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Ingrese código postal.</p>
+                                            </div>
+
+                                            <br />
+                                            <md-input-container>
+                                                <label>Seleccione un país</label>
+                                                <md-select ng-model="editProvider.Address.LocationCountry" name="location" ng-change="setCountryAsLocation(editProvider.Address)" required>
+                                                    <md-option><em>Seleccione</em></md-option>
+                                                    <md-option ng-repeat="country in countryList" ng-value="country">
+                                                        {{country.Name}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+
+                                            <div ng-messages="newProvider.location.$error" ng-if="newProvider.$submitted" role="alert">
+                                                <p style="color: red" ng-message="required">Seleccione un pais.</p>
+                                            </div>
+
+                                            <div class="col">
+                                                <md-input-container>
+                                                    <label>Seleccione una provincia</label>
+                                                    <md-select ng-model="editProvider.Address.LocationState" name="location" ng-change="setStateAsLocation(editProvider.Address)" required>
+                                                        <md-option><em>Seleccione</em></md-option>
+                                                        <md-option ng-repeat="state in stateList" ng-value="state">
+                                                            {{state.Name}}
+                                                        </md-option>
+                                                    </md-select>
+                                                </md-input-container>
+
+                                                <div ng-messages="newProvider.location.$error" ng-if="newProvider.$submitted" role="alert">
+                                                    <p style="color: red" ng-message="required">Seleccione un provincia.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col">
+                                                <md-input-container>
+                                                    <label>Seleccione una ciudad</label>
+                                                    <md-select ng-model="editProvider.Address.LocationCity" name="location" ng-change="setCityAsLocation(editProvider.Address)" required>
+                                                        <md-option><em>Seleccione</em></md-option>
+                                                        <md-option ng-repeat="city in cityList" ng-value="city">
+                                                            {{city.Name}}
+                                                        </md-option>
+                                                    </md-select>
+                                                </md-input-container>
+
+                                                <div ng-messages="newProvider.location.$error" ng-if="newProvider.$submitted" role="alert">
+                                                    <p style="color: red" ng-message="required">Seleccione un provincia.</p>
+                                                </div>
+                                            </div>
+
+                                            <div ng-hide="error == null" role="alert">
+                                                <br />
+                                                <p style="color: red">{{error}}</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="confirmProvider('newProvider')">
+                    Aceptar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+
+<script type="text/ng-template" id="dialogOpenCloseResult">
+    <md-dialog aria-label="Proveedores">
+        <form name="result" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools" style="background-color: #3f51b5">
+                    <h2>Nuevo Proveedor</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="alert alert-info">
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="col col-lg-4">
+                                            Nombre: <strong>{{resultProvider.FirstName}}</strong>
+                                            <br />
+                                            Apellido: <strong>{{resultProvider.LastName}}</strong>
+                                        </div>
+
+                                        <div class="col col-lg-4">
+                                            Tipo Documento: <strong>{{resultProvider.UidCode}}</strong>
+                                            <br />
+                                            Número de Documento: <strong>{{resultProvider.UidSerie}}</strong>
+                                        </div>
+
+                                        <div class="col col-lg-4">
+                                            Email: <strong>{{resultProvider.Email}}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="acept('newProvider')">
+                    Aceptar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>

@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Stock";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/StockController")
+
+<div class="container">
+    <div class="row">
+        <div class="col md-padding dialog" ng-controller="StockController" id="popupContainer" ng-cloak>
+
+            <div class="alert alert-danger" ng-if="stock.Id == 0">
+                <strong>No hay Stock previo.</strong> Debe crear stock.
+            </div>            
+            <button type="button" class="btn btn-primary" ng-click="processStock()">
+                {{ stock.Id == 0 ? 'Crear Stock' : 'Procesar Stock' }} 
+            </button>
+
+            <br /><br />
+            <label ng-show="stock.Id != 0">Fecha Stock: {{stock.StockDate}}</label>
+            <br />
+            <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+            <br />
+            <div class="alert alert-danger" ng-show="stock.Detail.length == 0">
+                <strong>No hay stock de ningun producto. Debe realizar compras.</strong>                
+            </div>
+
+            <div class="alert alert-success" ng-show="stockCreated">
+                <strong>Compras procesadas: {{ stock.ProcsessedBuys }} </strong>
+                <br />
+                <strong>Ventas procesadas: {{ stock.ProcsessedSales }} </strong>
+            </div>
+
+            <div class="alert alert-danger" ng-show="!stockCreated">
+                <strong>Compras no procesadas: {{ stock.UnProcsessedBuys }} </strong>
+                <br />
+                <strong>Ventas no procesadas: {{ stock.UnProcsessedSales }} </strong>
+            </div>
+            
+            <div class="alert alert-info">
+                <strong>Reservas: {{ stock.PreSales }} </strong>                
+            </div>
+        </div>
+    </div>
+</div>

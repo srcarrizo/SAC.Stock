@@ -1,0 +1,11 @@
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\bin\Debug\netcoreapp2.0\WebSiteStockA4Core.deps.json
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\bin\Debug\netcoreapp2.0\WebSiteStockA4Core.runtimeconfig.json
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\bin\Debug\netcoreapp2.0\WebSiteStockA4Core.runtimeconfig.dev.json
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\bin\Debug\netcoreapp2.0\WebSiteStockA4Core.dll
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\bin\Debug\netcoreapp2.0\WebSiteStockA4Core.pdb
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\obj\Debug\netcoreapp2.0\WebSiteStockA4Core.csprojAssemblyReference.cache
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\obj\Debug\netcoreapp2.0\WebSiteStockA4Core.csproj.CoreCompileInputs.cache
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\obj\Debug\netcoreapp2.0\WebSiteStockA4Core.AssemblyInfoInputs.cache
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\obj\Debug\netcoreapp2.0\WebSiteStockA4Core.AssemblyInfo.cs
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\obj\Debug\netcoreapp2.0\WebSiteStockA4Core.dll
+D:\Devs\VS\SAC\SAC.Stock\Front\WebSiteStockA4Core\obj\Debug\netcoreapp2.0\WebSiteStockA4Core.pdb

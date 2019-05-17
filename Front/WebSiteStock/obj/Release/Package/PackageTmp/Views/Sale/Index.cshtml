@@ -1,0 +1,274 @@
+﻿
+@{
+    ViewBag.Title = "Ventas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/SaleController")
+
+<h2>Ventas</h2>
+
+<div ng-controller="SaleController" id="popupContainer" class="md-padding dialog" ng-cloak>
+    <div ng-show="listView" class="animate-show-hide">
+        <button type="button" class="btn" ng-click="changeViews('new')" ng-disabled="loading" ng-show="OpenedBox">
+            {{loading ? 'Cargando... Por favor espere' : 'Agregar Nueva Venta'}}
+        </button>        
+
+        <br /><br />
+
+        <div class="alert alert-danger" ng-show="!OpenedBox">
+            <br />
+            <strong>Caja Cerrada!</strong> Debe abrir caja antes de comenzar a realizar ventas.
+            <br /><br />
+        </div>
+        
+        <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+        <p>Página actual: {{ gridApi.pagination.getPage() }} de {{ gridApi.pagination.getTotalPages() }}</p>
+        <button type="button" class="btn btn-success" ng-click="gridApi.pagination.previousPage()">
+            página anterior
+        </button>
+        <button type="button" class="btn btn-success" ng-click="gridApi.pagination.nextPage()">
+            siguiente página
+        </button>
+    </div>
+
+    <div ng-show="newView" class="animate-show-hide">
+        <form name="newSale" ng-submit="saveNew()" novalidate>
+            <div class="container">
+                <div layout-gt-xs="row">
+                    <div flex-gt-xs="">
+                        <div class="row">
+                            <div class="col">
+                                <label>Fecha de compra</label>
+                                <md-datepicker name="saleDate" ng-model="viewObject.SaleDate" md-placeholder="Seleccione una fecha" required></md-datepicker>
+                            </div>
+
+                            <div ng-messages="newSale.saleDate.$error" ng-if="newSale.$submitted" role="alert">
+                                <p style="color: red" ng-message="required">Seleccione una fecha.</p>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Clientes</label>
+                                    <md-select ng-model="viewObject.Customer" name="customer" ng-model-options="{trackBy: '$value.Id'}" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="customer in customersList" ng-value="customer">
+                                            {{customer.LastName}}, {{customer.FirstName}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newSale.customer.$error" ng-if="newSale.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione un cliente.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Sucursal</label>
+                                    <md-select ng-model="viewObject.BranchOffice" name="branchOffice" ng-model-options="{trackBy: '$value.Id'}" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="bran in branchOfficesList" ng-value="bran">
+                                            {{bran.Name}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newSale.branchOffice.$error" ng-if="newSale.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione una sucursal.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Empleado</label>
+                                    <md-select ng-model="viewObject.BranchOfficeStaff" name="employee" ng-model-options="{trackBy: '$value.Id'}" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="empl in employeesList" ng-value="empl">
+                                            {{empl.Staff.Person.LastName}}, {{empl.Staff.Person.FirstName}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newSale.employee.$error" ng-if="newSale.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione un empleado.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <md-switch ng-model="viewObject.PreSale" aria-label="Reserva/Venta Directa">
+                                        {{ viewObject.PreSale ?  'Reserva' : 'Venta Directa' }}
+                                    </md-switch>
+                                </md-input-container>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <md-switch ng-model="viewObject.MayorMinorSale" aria-label="Mayorista/Minorista">
+                                        {{ viewObject.MayorMinorSale ?  'Minorista' : 'Mayorista' }}
+                                    </md-switch>
+                                </md-input-container>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <label>Detalle</label>
+            <br />
+            <md-button class="md-raised" ng-click="addProduct()" type="button">Agregar</md-button>
+            <md-button class="md-raised" ng-click="removeProduct()" type="button">Eliminar</md-button>
+            <br />
+            <div ng-repeat="detail in viewObject.Detail">                              
+                <div layout-gt-xs="row">
+                    <md-input-container>
+                        <label>Seleccione un Producto</label>
+                        <md-select ng-model="detail.Product" name="product" ng-model-options="{trackBy: '$value.Id'}" ng-change="checkStock(this.detail)" required>
+                            <md-option><em>Seleccione</em></md-option>
+                            <md-option ng-repeat="pro in productsList" ng-value="pro">
+                                {{pro.Name}}, {{pro.Code}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    
+                    <input type="text" my-autocomplete="selectedProduct" placeholder="Entre nombre del producto"/>
+                    
+                    <div ng-messages="detail.product.$error" ng-if="newSale.$submitted" role="alert">
+                        <p style="color: red" ng-message="required">Seleccione un producto.</p>
+                    </div>
+
+                    <div ng-if="detail.Product">
+                        <md-input-container>
+                            <label>Cantidad</label>
+                            <input type="number" ng-model="detail.Amount" min="0" name="amount" ng-blur="checkStock(this.detail)" required>
+                        </md-input-container>
+
+                        <div ng-messages="detail.amount.$error" ng-if="newSale.$submitted" role="alert">
+                            <p style="color: red" ng-message="required">Ingrese la cantidad.</p>
+                        </div>
+
+                        <md-checkbox ng-model="detail.ProductPrice" ng-click="clearPrice(detail)">¿Editar precio?</md-checkbox>
+
+                        <div ng-if="!detail.ProductPrice">
+                            <md-input-container>
+                                <label>Precio</label>
+                                <input type="number" ng-model="detail.Product.CurrentProductPrice.BuyMayorPrice" readonly>
+                            </md-input-container>
+                        </div>
+
+                        <div ng-if="detail.ProductPrice">
+                            <md-input-container>
+                                <label>Precio</label>
+                                <input type="number" ng-model="detail.Price" min="0" name="price" ng-required="detail.ProductPrice">
+                            </md-input-container>
+                        </div>
+
+                        <div ng-messages="detail.price.$error" ng-if="newSale.$submitted" role="alert">
+                            <p style="color: red" ng-message="required">Ingrese el precio.</p>
+                        </div>
+
+                        <div ng-if="!detail.ProductPrice">
+                            <md-input-container>
+                                <label>SubTotal</label>
+                                <input type="number" ng-model="detail.SubTotal" min="0" ng-value="detail.Product.CurrentProductPrice.BuyMayorPrice * detail.Amount" readonly>
+                            </md-input-container>
+                        </div>
+
+                        <div ng-if="detail.ProductPrice">
+                            <md-input-container>
+                                <label>SubTotal</label>
+                                <input type="number" ng-model="detail.EditedSubTotal" min="0" ng-value="detail.Price * detail.Amount" readonly>
+                            </md-input-container>
+                        </div>
+
+                        <div ng-if="!detail.Available" role="alert">
+                            <p style="color: red">Sin Stock.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <br />
+            <label>Total</label>
+            {{getTotal()}}
+            <br />
+            <button type="submit" class="btn">
+                Aceptar
+            </button>
+            <button type="button" class="btn" ng-click="changeViews('list')">
+                Cancelar y Volver
+            </button>
+        </form>
+    </div>
+
+    <div ng-if="resultView" class="animate-show-hide">
+        <div class="alert alert-info" ng-show="!viewObject.PreSale">
+            <strong>La venta se a dado de alta correctamente</strong>
+        </div>
+        <div class="alert alert-warning" ng-show="viewObject.PreSale">
+            <strong>La reserva se a dado de alta correctamente</strong>
+        </div>
+
+        <br />
+        <div class="alert alert-info" ng-show="!viewObject.MayorMinorSale">
+            <strong>Venta Mayorista</strong>
+        </div>
+        <div class="alert alert-warning" ng-show="viewObject.MayorMinorSale">
+            <strong>Venta Minorista</strong>
+        </div>
+
+        <label>Id: </label> {{viewObject.Id}}
+        <br /><br />
+        <label>Fecha de compra: </label> {{viewObject.SaleDate}}
+        <br /><br />
+        <label>Sucursal: </label> {{viewObject.BranchOffice.Name}} <label>Empleado: </label> {{viewObject.BranchOfficeStaff.Staff.Person.LastName}}, {{viewObject.BranchOfficeStaff.Staff.Person.FirstName}}
+        <br /><br />
+        <label>Cliente: </label> {{viewObject.Customer.Name}}
+        <br /><br />
+        <div ng-if="viewObject.DeactivatedDate"><label>Fecha de anulación: </label> <label>{{viewObject.DeactivatedDate}}</label> -- <label>Motivo de DeactivatedNote: </label> {{viewObject.DeactivatedDate}}</br></br></div>
+        <label>Detalle:</label>
+        <div ui-grid="gridOptionsDetail" class="grid"></div>
+
+        <br /><br />
+        <button type="button" class="btn" ng-click="changeViews('list')">
+            Volver
+        </button>
+    </div>
+
+    <div ng-if="viewView" class="animate-show-hide">
+        <div class="alert alert-info" ng-show="!viewObject.PreSale">
+            <strong>Venta Directa</strong>
+        </div>
+        <div class="alert alert-warning" ng-show="viewObject.PreSale">
+            <strong>Reserva</strong>
+        </div>
+
+        <br />
+        <div class="alert alert-info" ng-show="!viewObject.MayorMinorSale">
+            <strong>Venta Mayorista</strong>
+        </div>
+        <div class="alert alert-warning" ng-show="viewObject.MayorMinorSale">
+            <strong>Venta Minorista</strong>
+        </div>
+
+        <label>Id: </label> {{viewObject.Id}}
+        <br /><br />
+        <label>Fecha de compra: </label> {{viewObject.SaleDate}}
+        <br /><br />
+        <label>Sucursal: </label> {{viewObject.BranchOffice.Name}} <label>Empleado: </label> {{viewObject.BranchOfficeStaff.Staff.Person.LastName}}, {{viewObject.BranchOfficeStaff.Staff.Person.FirstName}}
+        <br /><br />
+        <label>Cliente: </label> {{viewObject.Customer.Name}}
+        <br /><br />
+        <div ng-if="viewObject.DeactivatedDate"><label>Fecha de anulación: </label> <label>{{viewObject.DeactivatedDate}}</label> -- <label>Motivo de DeactivatedNote: </label> {{viewObject.DeactivatedDate}}</br></br></div>
+        <label>Detalle:</label>
+        <div ui-grid="gridOptionsDetail" class="grid"></div>
+
+        <br /><br />
+        <button type="button" class="btn" ng-click="changeViews('list')">
+            Volver
+        </button>
+    </div>
+</div>

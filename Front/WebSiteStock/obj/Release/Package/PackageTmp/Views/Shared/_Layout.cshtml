@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html ng-app="stockModule">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")    
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/StockAngular")
+</head>
+<body ng-controller="mainController" ng-cloak>    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="float-right">
+
+                @if (Session["MenuHtml"] != null)
+                {
+                    <div class="navbar-header">
+                        <div class="float-right">
+													<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+														@*<span class="icon-bar"> <a href='/Account/Logoff'>Logoff</a></span>*@
+														<span class="icon-bar">Menu</span>
+														<span class="icon-bar"></span>
+														<span class="icon-bar"></span>
+													</button>
+                            <div class="navbar-collapse collapse">
+                                @Html.Raw(Session["MenuHtml"].ToString())
+                                @if ((Request.Browser.Type.ToUpper().Contains("IE")) && ((Request.Browser.MajorVersion < 7)))
+                                {
+                                    <script type="text/javascript">
+                                        $('#menu').find('li').has('ul').mouseover(function () {
+                                            $(this).children('ul').css('visibility', 'visible');
+                                        }).mouseout(function () {
+                                            $(this).children('ul').css('visibility', 'hidden');
+                                        });
+                                    </script>                                   
+                                }                                                     
+                            </div>
+                        </div>                        
+                    </div>
+                }
+                else
+                {
+                    <nav class="no-menu"></nav>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container body-content">   
+        <div id="loading-bar-container"></div>
+        @RenderBody()
+        <hr />
+        <footer class="footer">
+            <p>&copy; @DateTime.Now.Year - SAC Stock</p>
+        </footer>
+    </div>
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)    
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Stock.Core.Domain.Query.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Stock.Core.Domain.Query.pdb
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Seed.Core.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Seed.NLayer.Core.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Seed.NLayer.Extend.Data.EntityFramework.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Stock.Core.Shared.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Membership.Core.Shared.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\EntityFramework.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\bin\Debug\SAC.Stock.Core.Shared.pdb
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\obj\Debug\Domain.Query.csprojAssemblyReference.cache
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\obj\Debug\Domain.Query.csproj.CoreCompileInputs.cache
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\obj\Debug\Domain.Query.csproj.CopyComplete
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\obj\Debug\SAC.Stock.Core.Domain.Query.dll
+D:\Devs\VS\SAC\SAC.Stock\Core\Domain.Query\obj\Debug\SAC.Stock.Core.Domain.Query.pdb

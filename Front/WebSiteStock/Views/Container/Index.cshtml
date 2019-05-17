@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Embases";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/ContainerController")
+
+<h2>Embases</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col md-padding dialog" ng-controller="ContainerController" id="popupContainer" ng-cloak>
+
+            <div ui-grid="gridParentContainer" class="grid" ui-grid-auto-resize ui-grid-grouping></div>
+            <br /><br />
+
+            <button type="button" class="btn btn-primary" ng-click="editContainer('newContainer')" ng-disabled="loading">
+                {{loading ? 'Cargando... Por favor espere' : 'Agregar Embases'}}
+            </button>
+            <br /><br />
+
+            <div ui-grid="gridContainer" class="grid" ui-grid-auto-resize ui-grid-grouping></div>
+            <br /><br />
+
+            <div ng-show="containerMSG.Text != null" ng-class="containerMSG.Operation ? 'alert alert-success' : 'alert alert-danger'">
+                <strong>{{containerMSG.Text}}</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="editContainer">
+    <md-dialog aria-label="Container">
+        <form name="newContiner" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Ambase</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Nombre</label>
+                                        <textarea ng-model="container.Name" name="name" md-select-on-focus required></textarea>
+                                    </md-input-container>
+
+                                    <div ng-messages="newContiner.name.$error" ng-if="newContiner.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya nombre.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Descripcion</label>
+                                        <textarea ng-model="container.Description" name="description" md-select-on-focus></textarea>
+                                    </md-input-container>                                   
+                                </div>
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <md-switch ng-model="container.Parent" aria-label="Mayorista/Minorista">
+                                            {{ container.Parent ?  'Mayorista' : 'Minorista' }}
+                                        </md-switch>
+                                    </md-input-container>
+                                </div>
+
+                                <div class="col" ng-if="!container.Parent">
+                                    <md-input-container>
+                                        <label>Seleccione Embase Mayorista</label>
+                                        <md-select ng-model="container.ParentContainer" name="parentContainer" ng-model-options="{trackBy: '$value.Id'}" required>
+                                            <md-option><em>Seleccione</em></md-option>
+                                            <md-option ng-repeat="container in parentContainerList" ng-value="container">
+                                                {{container.Name + ', Cantidad: ' + container.Amount}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                    <br />
+                                    <div ng-messages="newContiner.ParentContainer.$error" ng-if="container.Parent && newCategory.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Seleccione un elemento.</p>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Cantidad {{container.Parent ? 'Mayorista' : 'Minorista'}}</label>                                        
+                                        <input type="number" ng-model="container.Amount" min="0" name="amount" required>
+                                    </md-input-container>                                   
+                                </div>    
+                                
+                                <div class="col">
+                                    <div ng-hide="error == null" role="alert">
+                                        <br />
+                                        <p style="color: red">{{error}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="confirmContainer('saveContainer')">
+                    Guardar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>

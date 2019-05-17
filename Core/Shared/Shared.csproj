@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADAD7401-50EB-426B-808E-F33660EA3B51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAC.Stock</RootNamespace>
+    <AssemblyName>SAC.Stock.Core.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAC.Membership.Core.Shared">
+      <HintPath>..\..\..\SAC.Membership\Assemblies\SAC.Membership.Core.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.Core">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.NLayer.Core">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.NLayer.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\BusinessRulesCode.cs" />
+    <Compile Include="Code\CodeConst.cs" />
+    <Compile Include="Code\SortQuery.cs" />
+    <Compile Include="Code\SpecFilter.cs" />
+    <Compile Include="Code\Tables\ApplicationTable.cs" />
+    <Compile Include="Code\Tables\AttributeTable.cs" />
+    <Compile Include="Code\Tables\BillUnitTypeTable.cs" />
+    <Compile Include="Code\Tables\BillTable.cs" />
+    <Compile Include="Code\Tables\GenderTable.cs" />
+    <Compile Include="Code\Tables\LocationTypeTable.cs" />
+    <Compile Include="Code\Tables\OperationCodeTable.cs" />
+    <Compile Include="Code\Tables\RoleTable.cs" />
+    <Compile Include="Code\Tables\ScopeTable.cs" />
+    <Compile Include="Code\Tables\StaffRoleTable.cs" />
+    <Compile Include="Code\Tables\StaffTypeTable.cs" />
+    <Compile Include="Code\Tables\TelcoTable.cs" />
+    <Compile Include="Code\UserName.cs" />
+    <Compile Include="Infrastucture\AuthHelper.cs" />
+    <Compile Include="Infrastucture\Logg.cs" />
+    <Compile Include="Infrastucture\Notification\EmailNotifier.cs" />
+    <Compile Include="Infrastucture\Notification\Settings.cs" />
+    <Compile Include="Infrastucture\SharedSettings.cs" />
+    <Compile Include="Infrastucture\UserDtoExtension.cs" />
+    <Compile Include="Infrastucture\ValidityToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BaseDto\AddressDto.cs" />
+    <Compile Include="Service\BaseDto\AttributeValueDto.cs" />
+    <Compile Include="Service\BaseDto\StaffDto.cs" />
+    <Compile Include="Service\BillContext\BillDto.cs" />
+    <Compile Include="Service\BillContext\BillUnitTypeDto.cs" />
+    <Compile Include="Service\BaseDto\LocationDto.cs" />
+    <Compile Include="Service\BaseDto\PersonDto.cs" />
+    <Compile Include="Service\BaseDto\PersonWithTypeDto.cs" />
+    <Compile Include="Service\BaseDto\PhoneDto.cs" />
+    <Compile Include="Service\BaseDto\TelcoDto.cs" />
+    <Compile Include="Service\BillContext\IBillApplicationService.cs" />
+    <Compile Include="Service\BoxContext\BoxDetailDto.cs" />
+    <Compile Include="Service\BoxContext\BoxDto.cs" />
+    <Compile Include="Service\BoxContext\BoxSalesBuysTransactions.cs" />
+    <Compile Include="Service\BudgetContext\BudgetDetailDto.cs" />
+    <Compile Include="Service\BudgetContext\BudgetDto.cs" />
+    <Compile Include="Service\BudgetContext\IBudgetApplicationService.cs" />
+    <Compile Include="Service\BuyContext\BuysTotalCountDto.cs" />
+    <Compile Include="Service\BoxContext\IBoxApplicationService.cs" />
+    <Compile Include="Service\BranchOfficeContext\BranchOfficeDto.cs" />
+    <Compile Include="Service\BranchOfficeContext\BranchOfficeStaffDto.cs" />
+    <Compile Include="Service\BranchOfficeContext\BranchOfficeStaffSaveDto.cs" />
+    <Compile Include="Service\BranchOfficeContext\IBranchOfficeApplicationService.cs" />
+    <Compile Include="Service\BuyContext\BuyDetailDto.cs" />
+    <Compile Include="Service\BuyContext\BuyDto.cs" />
+    <Compile Include="Service\BuyContext\IBuyApplicationService.cs" />
+    <Compile Include="Service\ProductContext\IProductApplicationService.cs" />
+    <Compile Include="Service\CustomerContext\CustomerDto.cs" />
+    <Compile Include="Service\CustomerContext\ICustomerApplicationService.cs" />
+    <Compile Include="Service\LocationContext\ILocationApplicationService.cs" />
+    <Compile Include="Service\PersonContext\IPersonApplicationService.cs" />
+    <Compile Include="Service\ProductContext\AreaDto.cs" />
+    <Compile Include="Service\ProductContext\CategoryDto.cs" />
+    <Compile Include="Service\ProductContext\ContainerDto.cs" />
+    <Compile Include="Service\ProductContext\ProductDto.cs" />
+    <Compile Include="Service\ProductContext\ProductPriceDto.cs" />
+    <Compile Include="Service\ProductContext\SubCategoryDto.cs" />
+    <Compile Include="Service\ProfileContext\IProfileApplicationService.cs" />
+    <Compile Include="Service\ProfileContext\ProfileDto.cs" />
+    <Compile Include="Service\ProfileContext\RolesCompositionDto.cs" />
+    <Compile Include="Service\ProviderContext\IProviderApplicationService.cs" />
+    <Compile Include="Service\ProviderContext\ProviderDto.cs" />
+    <Compile Include="Service\SaleContext\ISaleApplicationService.cs" />
+    <Compile Include="Service\SaleContext\SaleDetailDto.cs" />
+    <Compile Include="Service\SaleContext\SaleDto.cs" />
+    <Compile Include="Service\SaleContext\SalesTotalCountDto.cs" />
+    <Compile Include="Service\StockContext\IStockApplicationService.cs" />
+    <Compile Include="Service\StockContext\StockDetailDto.cs" />
+    <Compile Include="Service\StockContext\StockDto.cs" />
+    <Compile Include="Service\SupportContext\ISupportApplicationService.cs" />
+    <Compile Include="Service\TransactionContext\ITransactionApplicationService.cs" />
+    <Compile Include="Service\TransactionContext\TransactionDetailDto.cs" />
+    <Compile Include="Service\TransactionContext\TransactionDto.cs" />
+    <Compile Include="Service\TransactionContext\TransactionsTotalDto.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

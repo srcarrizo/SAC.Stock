@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFC40C9D-1CBE-4130-ADF0-625C3702472C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAC.Stock</RootNamespace>
+    <AssemblyName>SAC.Stock.Core.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.Core">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.NLayer.Core">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.NLayer.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAC.Seed.NLayer.Extend.Data.EntityFramework">
+      <HintPath>..\..\..\SAC.Seed\Assemblies\SAC.Seed.NLayer.Extend.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Context\EntityTypeConfiguration\CustomerConfiguration.cs" />
+    <Compile Include="Data\Context\EntityTypeConfiguration\ProviderConfiguration.cs" />
+    <Compile Include="Data\Context\EntityTypeConfiguration\StaffConfiguration.cs" />
+    <Compile Include="Data\Context\StockContextCoreInitializer.cs" />
+    <Compile Include="Data\Context\StockContext.cs" />
+    <Compile Include="Data\Migrations\StockMigration.cs" />
+    <Compile Include="Migrations\201711152248119_InitialCreate.cs" />
+    <Compile Include="Migrations\201711152248119_InitialCreate.Designer.cs">
+      <DependentUpon>201711152248119_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711162019319_TransactionName.cs" />
+    <Compile Include="Migrations\201711162019319_TransactionName.Designer.cs">
+      <DependentUpon>201711162019319_TransactionName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711201617183_BuySaleStock.cs" />
+    <Compile Include="Migrations\201711201617183_BuySaleStock.Designer.cs">
+      <DependentUpon>201711201617183_BuySaleStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711221427328_BuySaleBox.cs" />
+    <Compile Include="Migrations\201711221427328_BuySaleBox.Designer.cs">
+      <DependentUpon>201711221427328_BuySaleBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711221436510_BuySaleBoxStockId.cs" />
+    <Compile Include="Migrations\201711221436510_BuySaleBoxStockId.Designer.cs">
+      <DependentUpon>201711221436510_BuySaleBoxStockId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712011739187_PreSale.cs" />
+    <Compile Include="Migrations\201712011739187_PreSale.Designer.cs">
+      <DependentUpon>201712011739187_PreSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712020014582_Withdrawal.cs" />
+    <Compile Include="Migrations\201712020014582_Withdrawal.Designer.cs">
+      <DependentUpon>201712020014582_Withdrawal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712151806506_MayorMinorSale.cs" />
+    <Compile Include="Migrations\201712151806506_MayorMinorSale.Designer.cs">
+      <DependentUpon>201712151806506_MayorMinorSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712151822116_ProductPrice.cs" />
+    <Compile Include="Migrations\201712151822116_ProductPrice.Designer.cs">
+      <DependentUpon>201712151822116_ProductPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712151833083_ProductPriceDetail.cs" />
+    <Compile Include="Migrations\201712151833083_ProductPriceDetail.Designer.cs">
+      <DependentUpon>201712151833083_ProductPriceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221813070_Budget_Customer.cs" />
+    <Compile Include="Migrations\201801221813070_Budget_Customer.Designer.cs">
+      <DependentUpon>201801221813070_Budget_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801221959081_BudgetDetailPrice.cs" />
+    <Compile Include="Migrations\201801221959081_BudgetDetailPrice.Designer.cs">
+      <DependentUpon>201801221959081_BudgetDetailPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{3b6adbeb-c57c-4e98-9706-4d9e50c31338}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{adad7401-50eb-426b-808e-f33660ea3b51}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711152248119_InitialCreate.resx">
+      <DependentUpon>201711152248119_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711162019319_TransactionName.resx">
+      <DependentUpon>201711162019319_TransactionName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711201617183_BuySaleStock.resx">
+      <DependentUpon>201711201617183_BuySaleStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711221427328_BuySaleBox.resx">
+      <DependentUpon>201711221427328_BuySaleBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711221436510_BuySaleBoxStockId.resx">
+      <DependentUpon>201711221436510_BuySaleBoxStockId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712011739187_PreSale.resx">
+      <DependentUpon>201712011739187_PreSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712020014582_Withdrawal.resx">
+      <DependentUpon>201712020014582_Withdrawal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151806506_MayorMinorSale.resx">
+      <DependentUpon>201712151806506_MayorMinorSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151822116_ProductPrice.resx">
+      <DependentUpon>201712151822116_ProductPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712151833083_ProductPriceDetail.resx">
+      <DependentUpon>201712151833083_ProductPriceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221813070_Budget_Customer.resx">
+      <DependentUpon>201801221813070_Budget_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801221959081_BudgetDetailPrice.resx">
+      <DependentUpon>201801221959081_BudgetDetailPrice.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

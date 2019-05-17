@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/ProductController")
+
+<h2>Productos</h2>
+<div ng-controller="ProductController" ng-cloak>
+    <button type="button" class="btn btn-primary" ng-click="editProduct('newProduct')" ng-disabled="loading">
+        {{loading ? 'Cargando... Por favor espere' : 'Agregar Producto'}}
+    </button>
+    <br /><br />
+
+    <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+    <p>Página actual: {{ gridApi.pagination.getPage() }} of {{ gridApi.pagination.getTotalPages() }}</p>
+    <button type="button" class="btn btn-success" ng-click="gridApi.pagination.previousPage()">
+        página anterior
+    </button>
+    <button type="button" class="btn btn-success" ng-click="gridApi.pagination.nextPage()">
+        siguiente página
+    </button>
+
+    <br /><br />
+    <div ui-grid="gridOptionsGrouped" class="grid" ui-grid-auto-resize ui-grid-grouping></div>
+
+    <br />
+    <div ng-show="productMSG.Text != null" ng-class="productMSG.Operation ? 'alert alert-success' : 'alert alert-danger'">
+        <strong>{{productMSG.Text}}</strong>
+    </div>
+</div>
+
+<script type="text/ng-template" id="editProduct">
+    <md-dialog aria-label="Product">
+        <form name="newProduct" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Area</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Código</label>
+                                    <textarea ng-model="product.Code" name="code" md-select-on-focus required></textarea>
+                                </md-input-container>
+
+                                <div ng-messages="newProduct.code.$error" ng-if="newProduct.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Incluya el código.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Nombre</label>
+                                    <textarea ng-model="product.Name" name="name" md-select-on-focus required></textarea>
+                                </md-input-container>
+
+                                <div ng-messages="newProduct.name.$error" ng-if="newProduct.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Incluya el nombre.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Descripción</label>
+                                    <textarea ng-model="product.Description" name="code" md-select-on-focus></textarea>
+                                </md-input-container>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <md-switch ng-model="product.ForSale" aria-label="Para Venta/No disponible">
+                                        {{ product.ForSale ?  'Venta' : 'No disponible' }}
+                                    </md-switch>
+                                </md-input-container>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Seleccione una Subcategoria</label>
+                                    <md-select ng-model="product.SubCategory" name="subCategory" ng-model-options="{trackBy: '$value.Id'}" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="subc in subCategoryList" ng-value="subc">
+                                            {{subc.Name}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newProduct.subCategory.$error" ng-if="newProduct.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione una subcategoria.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <md-input-container>
+                                    <label>Seleccione un Embase</label>
+                                    <md-select ng-model="product.Container" name="container" ng-model-options="{trackBy: '$value.Id'}" required>
+                                        <md-option><em>Seleccione</em></md-option>
+                                        <md-option ng-repeat="con in contianerList" ng-value="con">
+                                            {{con.Name}}, {{con.Amount}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+
+                                <div ng-messages="newProduct.container.$error" ng-if="newProduct.$submitted" role="alert">
+                                    <p style="color: red" ng-message="required">Seleccione un embase.</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Precio</h3>
+
+                                    <md-input-container>
+                                        <label>Precio de compra mayorista</label>
+                                        <input type="number" ng-model="product.CurrentProductPrice.BuyMayorPrice" min="0" name="buyMayorPrice" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newProduct.buyMayorPrice.$error" ng-if="newProduct.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya el precio de compra mayorista.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">                                    
+
+                                    <md-input-container>
+                                        <label>Porcentaje de ganancia mayorista</label>
+                                        <input type="number" ng-model="product.CurrentProductPrice.MayorGainPercent" step="0.01" min="0" name="mayorGainPercent" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newProduct.mayorGainPercent.$error" ng-if="newProduct.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya el porcentaje de ganancia mayorista.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">                                    
+
+                                    <md-input-container>
+                                        <label>Porcentaje de ganancia minorista</label>
+                                        <input type="number" ng-model="product.CurrentProductPrice.MinorGainPercent" step="0.01" min="0" name="minorGainPercent" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newProduct.minorGainPercent.$error" ng-if="newProduct.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya el porcentaje de ganancia minorista.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="confirmProduct('saveProduct')">
+                    Guardar
+                </button>
+            </md-dialog-actions>
+
+        </form>
+    </md-dialog>
+</script>

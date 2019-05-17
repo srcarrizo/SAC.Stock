@@ -1,0 +1,249 @@
+﻿
+@{
+    ViewBag.Title = "Rubros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/AreaCategoryController")
+
+<h2>Rubros Categorias y SubCategorias</h2>
+<div class="container" ng-controller="AreaCategoryController" ng-cloak>
+    <div class="row">
+        <div class="col md-padding dialog" id="popupContainer">
+            <h3>Rubros</h3>
+
+            <button type="button" class="btn btn-primary" ng-click="editArea('newArea')" ng-disabled="loading">
+                {{loading ? 'Cargando... Por favor espere' : 'Agregar Rubros'}}
+            </button>
+            <br /><br />
+
+            <div ui-grid="gridArea" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+            <p>Página actual: {{ gridApi.pagination.getPage() }} of {{ gridApi.pagination.getTotalPages() }}</p>
+            <button type="button" class="btn btn-success" ng-click="gridApi.pagination.previousPage()">
+                página anterior
+            </button>
+            <button type="button" class="btn btn-success" ng-click="gridApi.pagination.nextPage()">
+                siguiente página
+            </button>
+            <br /><br />
+
+            <div ng-show="areaMSG.Text != null" ng-class="areaMSG.Operation ? 'alert alert-success' : 'alert alert-danger'">
+                <strong>{{areaMSG.Text}}</strong>
+            </div>
+
+            <h3>Categorias</h3>
+
+            <button type="button" class="btn btn-primary" ng-click="editCategory('newCategory')" ng-disabled="loading">
+                {{loading ? 'Cargando... Por favor espere' : 'Agregar Categoria'}}
+            </button>
+
+            <br /><br />
+            <div ui-grid="gridCategory" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+            <p>Página actual: {{ gridApi2.pagination.getPage() }} of {{ gridApi2.pagination.getTotalPages() }}</p>
+            <button type="button" class="btn btn-success" ng-click="gridApi2.pagination.previousPage()">
+                página anterior
+            </button>
+            <button type="button" class="btn btn-success" ng-click="gridApi2.pagination.nextPage()">
+                siguiente página
+            </button>
+
+            <br /><br />
+            <div ng-show="categoryMSG.Text != null" ng-class="categoryMSG.Operation ? 'alert alert-success' : 'alert alert-danger'">
+                <strong>{{categoryMSG.Text}}</strong>
+            </div>
+            <br />
+
+            <h3>SubCategorias</h3>
+
+            <button type="button" class="btn btn-primary" ng-click="editSubCategory('newSubCategory')" ng-disabled="loading">
+                {{loading ? 'Cargando... Por favor espere' : 'Agregar SubCategoria'}}
+            </button>
+
+            <br /><br />
+            <div ui-grid="gridSubCategory" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+            <p>Página actual: {{ gridApi3.pagination.getPage() }} of {{ gridApi3.pagination.getTotalPages() }}</p>
+            <button type="button" class="btn btn-success" ng-click="gridApi3.pagination.previousPage()">
+                página anterior
+            </button>
+            <button type="button" class="btn btn-success" ng-click="gridApi3.pagination.nextPage()">
+                siguiente página
+            </button>
+
+            <br /><br />
+            <div ng-show="subCategoryMSG.Text != null" ng-class="subCategoryMSG.Operation ? 'alert alert-success' : 'alert alert-danger'">
+                <strong>{{subCategoryMSG.Text}}</strong>
+            </div>            
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="editArea">
+    <md-dialog aria-label="Area">
+        <form name="newArea" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Area</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Nombre</label>
+                                        <textarea ng-model="area.Name" name="name" md-select-on-focus required></textarea>
+                                    </md-input-container>
+
+                                    <div ng-messages="newArea.name.$error" ng-if="newArea.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya nombre.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="confirmArea('saveArea')">
+                    Guardar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+
+<script type="text/ng-template" id="editCategory">
+    <md-dialog aria-label="Categoria">
+        <form name="newCategory" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Categoria</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Nombre</label>
+                                        <textarea ng-model="category.Name" name="name" md-select-on-focus required></textarea>
+                                    </md-input-container>
+
+                                    <div ng-messages="newCategory.name.$error" ng-if="newCategory.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya nombre.</p>
+                                    </div>
+
+                                    <md-input-container>
+                                        <label>Seleccione Rubro</label>
+                                        <md-select ng-model="category.Area" name="area" ng-model-options="{trackBy: '$value.Id'}" required>
+                                            <md-option><em>Seleccione</em></md-option>
+                                            <md-option ng-repeat="area in areaList" ng-value="area">
+                                                {{area.Name}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                    <br />
+                                    <div ng-messages="newCategory.area.$error" ng-if="newCategory.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Seleccione un elemento.</p>
+                                    </div>
+
+                                    <div ng-hide="error == null" role="alert">
+                                        <br />
+                                        <p style="color: red">{{error}}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="confirmCategory('saveCategory')">
+                    Guardar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+
+<script type="text/ng-template" id="editSubCategory">
+    <md-dialog aria-label="SubCategoria">
+        <form name="newSubCategory" novalidate>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>SubCategoria</h2>
+                    <span flex></span>
+                    <md-button class="btn" ng-click="Cancel()">
+                        Cancelar
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="col">
+                                    <md-input-container>
+                                        <label>Nombre</label>
+                                        <textarea ng-model="subCategory.Name" name="name" md-select-on-focus required></textarea>
+                                    </md-input-container>
+
+                                    <div ng-messages="newSubCategory.name.$error" ng-if="newSubCategory.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Incluya nombre.</p>
+                                    </div>
+
+                                    <md-input-container>
+                                        <label>Seleccione Categoria</label>
+                                        <md-select ng-model="subCategory.Category" name="category" ng-model-options="{trackBy: '$value.Id'}" required>
+                                            <md-option><em>Seleccione</em></md-option>
+                                            <md-option ng-repeat="category in categoryList" ng-value="category">
+                                                {{category.Name}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                    <br />
+                                    <div ng-messages="newSubCategory.category.$error" ng-if="newSubCategory.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Seleccione un elemento.</p>
+                                    </div>
+
+                                    <div ng-hide="error == null" role="alert">
+                                        <br />
+                                        <p style="color: red">{{error}}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-dialog-content>
+
+            <md-dialog-actions layout="row">
+                <button type="submit" class="btn btn-primary" ng-click="confirmSubCategory('saveSubCategory')">
+                    Guardar
+                </button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>

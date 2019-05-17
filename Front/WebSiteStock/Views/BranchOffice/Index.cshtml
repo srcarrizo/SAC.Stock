@@ -1,0 +1,263 @@
+﻿
+@{
+    ViewBag.Title = "Sucursales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/BranchOfficeController")
+
+<h2>Sucursales</h2>
+
+<div ng-controller="BranchOfficeController" ng-cloak>
+    <div ng-show="listView" class="animate-show-hide">
+        <button type="button" class="btn btn-primary" ng-click="changeViews('new')" ng-disabled="loading">
+            {{loading ? 'Cargando... Por favor espere' : 'Agregar Sucursales'}}
+        </button>
+
+        <br /><br />
+
+        <div ui-grid="gridOptions" class="grid" ui-grid-pagination ui-grid-auto-resize></div>
+        <p>Página actual: {{ gridApi.pagination.getPage() }} of {{ gridApi.pagination.getTotalPages() }}</p>
+        <button type="button" class="btn btn-success" ng-click="gridApi.pagination.previousPage()">
+            página anterior
+        </button>
+        <button type="button" class="btn btn-success" ng-click="gridApi.pagination.nextPage()">
+            siguiente página
+        </button>
+    </div>
+
+    <div ng-show="newView" class="animate-show-hide">
+        <form name="newBranchOffice" ng-submit="saveNew()" novalidate>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-4">
+
+                        <md-input-container>
+                            <label>Nombre</label>
+                            <input ng-model="branchOffice.Name" name="name" required>
+                        </md-input-container>
+
+                        <div ng-messages="newBranchOffice.name.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                            <p style="color: red" ng-message="required">Ingrese el nombre.</p>
+                        </div>
+
+                        <md-input-container>
+                            <label>Descripción</label>
+                            <input ng-model="branchOffice.Description" name="description">
+                        </md-input-container>
+
+                        <div class="col">
+                            <div class="alert alert-info">
+
+                                <label>Telefonos</label>
+                                <br />
+                                <div ng-repeat="phone in branchOffice.Phones">
+
+                                    <md-input-container>
+                                        <label>Codigo de país</label>
+                                        <input ng-model="phone.CountryCode" name="countryCode" maxlength="6" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.countryCode.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Ingrese el código del país.</p>
+                                    </div>
+
+                                    <md-input-container>
+                                        <label>Codigo de area</label>
+                                        <input type="number" ng-model="phone.AreaCode" name="areaCode" maxlength="6" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.areaCode.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Ingrese el código de area.</p>
+                                    </div>
+
+                                    <md-input-container>
+                                        <label>Número</label>
+                                        <input type="number" ng-model="phone.Number" name="number" required>
+                                    </md-input-container>
+
+                                    <md-input-container>
+                                        <md-switch ng-model="phone.Mobile" aria-label="Celular/Fijo">
+                                            {{ phone.Mobile ?  'Celular' : 'Fijo' }}
+                                        </md-switch>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.number.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Ingrese el número.</p>
+                                    </div>
+
+                                    <md-input-container>
+                                        <label>Descripción</label>
+                                        <input ng-model="phone.Name" name="name" maxlength="100">
+                                    </md-input-container>
+
+                                    <br />
+                                    <md-input-container>
+                                        <label>Seleccione un operador</label>
+                                        <md-select ng-model="phone.Telco" name="telco" ng-change="setTelco(this.phone)" required>
+                                            <md-option><em>Seleccione</em></md-option>
+                                            <md-option ng-repeat="telco in telcoList" ng-value="telco">
+                                                {{telco.Name}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.telco.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Seleccione un operador.</p>
+                                    </div>
+
+                                    <div ng-hide="error == null" role="alert">
+                                        <br />
+                                        <p style="color: red">{{error}}</p>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <md-button class="md-raised" ng-click="addPhone()" type="button">Agregar</md-button>
+                                <md-button class="md-raised" ng-click="removePhone()" type="button">Eliminar</md-button>
+                                <br />
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="alert alert-warning">
+
+                                <label>Dirección</label>
+                                <br />
+                                <md-button class="md-raised md-primary" ng-if="branchOffice.Address == null" ng-click="addAddress()" type="button">Agregar</md-button>
+                                <md-button class="md-raised md-warn" ng-if="branchOffice.Address != null" ng-click="removeAddress()" type="button">Eliminar</md-button>
+                                <br />
+
+                                <div ng-if="branchOffice.Address != null">
+
+                                    <md-input-container>
+                                        <label>Calle</label>
+                                        <input ng-model="branchOffice.Address.Street" name="street" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.street.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Ingrese la calle.</p>
+                                    </div>
+
+                                    <md-input-container>
+                                        <label>Número</label>
+                                        <input ng-model="branchOffice.Address.StreetNumber" name="streetNumber" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.streetNumber.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Ingrese número.</p>
+                                    </div>
+
+                                    <md-input-container>
+                                        <label>Floor</label>
+                                        <input ng-model="branchOffice.Address.Floor" name="floor">
+                                    </md-input-container>
+
+                                    <md-input-container>
+                                        <label>Departamento</label>
+                                        <input ng-model="branchOffice.Address.Apartment" name="apartment">
+                                    </md-input-container>
+
+                                    <md-input-container>
+                                        <label>Barrio</label>
+                                        <input ng-model="branchOffice.Address.Neighborhood" name="neighborhood">
+                                    </md-input-container>
+
+                                    <md-input-container>
+                                        <label>Código postal</label>
+                                        <input ng-model="branchOffice.Address.ZipCode" name="zipCode" required>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.zipCode.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Ingrese código postal.</p>
+                                    </div>
+
+                                    <br />
+                                    <md-input-container>
+                                        <label>Seleccione un país</label>
+                                        <md-select ng-model="branchOffice.Address.LocationCountry" name="location" ng-change="setCountryAsLocation(branchOffice.Address)" required>
+                                            <md-option><em>Seleccione</em></md-option>
+                                            <md-option ng-repeat="country in countryList" ng-value="country">
+                                                {{country.Name}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+
+                                    <div ng-messages="newBranchOffice.location.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                        <p style="color: red" ng-message="required">Seleccione un pais.</p>
+                                    </div>
+
+                                    <div class="col">
+                                        <md-input-container>
+                                            <label>Seleccione una provincia</label>
+                                            <md-select ng-model="branchOffice.Address.LocationState" name="location" ng-change="setStateAsLocation(branchOffice.Address)" required>
+                                                <md-option><em>Seleccione</em></md-option>
+                                                <md-option ng-repeat="state in stateList" ng-value="state">
+                                                    {{state.Name}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+
+                                        <div ng-messages="newBranchOffice.location.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                            <p style="color: red" ng-message="required">Seleccione un provincia.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <md-input-container>
+                                            <label>Seleccione una ciudad</label>
+                                            <md-select ng-model="branchOffice.LocationCity" name="location" ng-change="setCityAsLocation(branchOffice.Address)" required>
+                                                <md-option><em>Seleccione</em></md-option>
+                                                <md-option ng-repeat="city in cityList" ng-value="city">
+                                                    {{city.Name}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+
+                                        <div ng-messages="newBranchOffice.location.$error" ng-if="newBranchOffice.$submitted" role="alert">
+                                            <p style="color: red" ng-message="required">Seleccione un provincia.</p>
+                                        </div>
+                                    </div>
+
+                                    <div ng-hide="error == null" role="alert">
+                                        <br />
+                                        <p style="color: red">{{error}}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button type="submit" class="btn">
+                            Aceptar
+                        </button>
+                        <button type="button" class="btn" ng-click="changeViews('list')">
+                            Cancelar y Volver
+                        </button>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div ng-if="resultView" class="animate-show-hide">
+        <div class="alert alert-warning">
+            <strong>La sucursal se a dado de alta correctamente</strong>
+        </div>
+        <br />
+        <label>Id: </label> {{branchOffice.Id}}
+        <br /><br />
+        <label>Sucursal: </label> {{branchOffice.Name}}
+        <br /><br />
+        <label>Descripción: </label> {{branchOffice.Description}}                
+        <br /><br />
+        <button type="button" class="btn" ng-click="changeViews('list')">
+            Volver
+        </button>
+    </div>
+</div>
+

@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+@Scripts.Render("~/bundles/LoginController")
+
+<h2>Login</h2>
+
+<div ng-app="stockModule" ng-cloak>    
+    <div ng-controller="LoginController">        
+        <form name="loginUser" ng-submit="Login()" novalidate>            
+            <!-- USERNAME -->
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" name="username" class="form-control" ng-model="loginUser.userName" required>
+            </div>
+            <div ng-messages="loginUser.username.$error" ng-if="loginUser.$submitted" role="alert">
+                <p style="color: red" ng-message="required">El nombre de usuario es requerido.</p>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" name="pass" class="form-control" ng-model="loginUser.password" required>
+            </div>
+
+            <div ng-messages="loginUser.pass.$error" ng-if="loginUser.$submitted" role="alert">
+                <p style="color: red" ng-message="required">La contraseña es requerida.</p>
+            </div>
+
+            <div ng-if="errorMessage" role="alert">
+                <p style="color: red">Nombre de usuario o contraseña incorrecta.</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
