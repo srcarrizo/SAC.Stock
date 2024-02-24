@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebSiteStockA4Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49c3d8339cf449edcf27a2e6bceacfbd2b8bde30")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebSiteStockA4Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebSiteStockA4Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "sourceMap": false,
+    "target": "es5",
+    "lib": [ "es6", "dom" ],
+    "baseUrl": "ClientApp"
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot"
+  ]
+}

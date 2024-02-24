@@ -7,3 +7,10 @@ D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.c
 D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\Shared.csproj.CopyComplete
 D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\SAC.Stock.Core.Shared.dll
 D:\Devs\VS\SAC\SAC.Stock\Core\Shared\obj\Debug\SAC.Stock.Core.Shared.pdb
+D:\Devs\News\Back\SAC\SAC.Stock\Core\Shared\bin\Debug\SAC.Stock.Core.Shared.dll
+D:\Devs\News\Back\SAC\SAC.Stock\Core\Shared\bin\Debug\SAC.Stock.Core.Shared.pdb
+D:\Devs\News\Back\SAC\SAC.Stock\Core\Shared\obj\Debug\Shared.csproj.AssemblyReference.cache
+D:\Devs\News\Back\SAC\SAC.Stock\Core\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+D:\Devs\News\Back\SAC\SAC.Stock\Core\Shared\obj\Debug\Shared.csproj.Up2Date
+D:\Devs\News\Back\SAC\SAC.Stock\Core\Shared\obj\Debug\SAC.Stock.Core.Shared.dll
+D:\Devs\News\Back\SAC\SAC.Stock\Core\Shared\obj\Debug\SAC.Stock.Core.Shared.pdb

@@ -1540,3 +1540,774 @@ Logger.Default Information: 768 : [ImportAreaCategorySubCategoryContainerProduct
 Logger.Default Information: 769 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 268 created
 Logger.Default Information: 770 : [ImportAreaCategorySubCategoryContainerProduct] End: 268 Products
 Logger.Default Information: 771 : [ImportAreaCategorySubCategoryContainerProduct] ++Global Lap: <<<<<End process... [00:00:26.8570417]
+Logger.Default Information: 1 : [ImportCountry] >>>>>Init process...
+Logger.Default Information: 2 : [ImportCountry] Start: 13 Countries
+Logger.Default Information: 3 : [ImportCountry] ++Global Lap: Start: 13 Countries [00:00:00.3765268]
+Logger.Default Information: 4 : [ImportCountry] ++Global Lap: <<<<<End process... [00:00:00.3772734]
+Logger.Default Information: 5 : [ImportState] >>>>>Init process...
+Logger.Default Information: 6 : [ImportState] Start: 13 States.
+Logger.Default Information: 7 : [ImportState] Start: 24 States in Argentina
+Logger.Default Information: 8 : [ImportState] ++Global Lap: End: 24 States in Argentina [00:00:00.6766191]
+Logger.Default Information: 9 : [ImportState] ++Custom Lap: End: 24 States in Argentina [00:00:00.6642770] 
+Logger.Default Information: 10 : [ImportState] Start: 10 States in Bolivia
+Logger.Default Information: 11 : [ImportState] ++Global Lap: End: 10 States in Bolivia [00:00:00.9076638]
+Logger.Default Information: 12 : [ImportState] ++Custom Lap: End: 10 States in Bolivia [00:00:00.2225208] 
+Logger.Default Information: 13 : [ImportState] Start: 28 States in Brasil
+Logger.Default Information: 14 : [ImportState] ++Global Lap: End: 28 States in Brasil [00:00:01.6124184]
+Logger.Default Information: 15 : [ImportState] ++Custom Lap: End: 28 States in Brasil [00:00:00.6963865] 
+Logger.Default Information: 16 : [ImportState] Start: 16 States in Chile
+Logger.Default Information: 17 : [ImportState] ++Global Lap: End: 16 States in Chile [00:00:01.9779326]
+Logger.Default Information: 18 : [ImportState] ++Custom Lap: End: 16 States in Chile [00:00:00.3556745] 
+Logger.Default Information: 19 : [ImportState] Start: 33 States in Colombia
+Logger.Default Information: 20 : [ImportState] ++Global Lap: End: 33 States in Colombia [00:00:02.9636756]
+Logger.Default Information: 21 : [ImportState] ++Custom Lap: End: 33 States in Colombia [00:00:00.9763330] 
+Logger.Default Information: 22 : [ImportState] Start: 25 States in Ecuador
+Logger.Default Information: 23 : [ImportState] ++Global Lap: End: 25 States in Ecuador [00:00:03.5972508]
+Logger.Default Information: 24 : [ImportState] ++Custom Lap: End: 25 States in Ecuador [00:00:00.6231171] 
+Logger.Default Information: 25 : [ImportState] Start: 20 States in Guayana Francesa
+Logger.Default Information: 26 : [ImportState] ++Global Lap: End: 20 States in Guayana Francesa [00:00:04.0668259]
+Logger.Default Information: 27 : [ImportState] ++Custom Lap: End: 20 States in Guayana Francesa [00:00:00.4610365] 
+Logger.Default Information: 28 : [ImportState] Start: 11 States in Guyana
+Logger.Default Information: 29 : [ImportState] ++Global Lap: End: 11 States in Guyana [00:00:04.3195841]
+Logger.Default Information: 30 : [ImportState] ++Custom Lap: End: 11 States in Guyana [00:00:00.2452162] 
+Logger.Default Information: 31 : [ImportState] Start: 19 States in Paraguay
+Logger.Default Information: 32 : [ImportState] ++Global Lap: End: 19 States in Paraguay [00:00:04.7806466]
+Logger.Default Information: 33 : [ImportState] ++Custom Lap: End: 19 States in Paraguay [00:00:00.4521906] 
+Logger.Default Information: 34 : [ImportState] Start: 27 States in Peru
+Logger.Default Information: 35 : [ImportState] ++Global Lap: End: 27 States in Peru [00:00:05.4183571]
+Logger.Default Information: 36 : [ImportState] ++Custom Lap: End: 27 States in Peru [00:00:00.6296995] 
+Logger.Default Information: 37 : [ImportState] Start: 11 States in Surinam
+Logger.Default Information: 38 : [ImportState] ++Global Lap: End: 11 States in Surinam [00:00:05.6745961]
+Logger.Default Information: 39 : [ImportState] ++Custom Lap: End: 11 States in Surinam [00:00:00.2482397] 
+Logger.Default Information: 40 : [ImportState] Start: 20 States in Uruguay
+Logger.Default Information: 41 : [ImportState] ++Global Lap: End: 20 States in Uruguay [00:00:06.1811218]
+Logger.Default Information: 42 : [ImportState] ++Custom Lap: End: 20 States in Uruguay [00:00:00.4970120] 
+Logger.Default Information: 43 : [ImportState] Start: 24 States in Venezuela
+Logger.Default Information: 44 : [ImportState] ++Global Lap: End: 24 States in Venezuela [00:00:06.7413418]
+Logger.Default Information: 45 : [ImportState] ++Custom Lap: End: 24 States in Venezuela [00:00:00.5495822] 
+Logger.Default Information: 46 : [ImportState] ++Global Lap: End: 13 States. [00:00:06.7417825]
+Logger.Default Information: 47 : [ImportState] ++Custom Lap: End: 13 States. [00:00:06.7402829] !!!!!
+Logger.Default Information: 48 : [ImportState] ++Global Lap: <<<<<End process... [00:00:06.7421493]
+Logger.Default Information: 49 : [ImportCity] >>>>>Init process...
+Logger.Default Information: 50 : [ImportCity] Start: 23 Cities.
+Logger.Default Information: 51 : [ImportCity] Start: 588 Cities in BuenosAires
+Logger.Default Information: 52 : [ImportCity] ++Global Lap: End: 588 Cities in BuenosAires [00:00:09.7571213]
+Logger.Default Information: 53 : [ImportCity] ++Custom Lap: End: 588 Cities in BuenosAires [00:00:09.7433701] !!!!!
+Logger.Default Information: 54 : [ImportCity] Start: 145 Cities in Catamarca
+Logger.Default Information: 55 : [ImportCity] ++Global Lap: End: 145 Cities in Catamarca [00:00:12.5650053]
+Logger.Default Information: 56 : [ImportCity] ++Custom Lap: End: 145 Cities in Catamarca [00:00:02.7959710] !!!!!
+Logger.Default Information: 57 : [ImportCity] Start: 92 Cities in Chaco
+Logger.Default Information: 58 : [ImportCity] ++Global Lap: End: 92 Cities in Chaco [00:00:14.3669429]
+Logger.Default Information: 59 : [ImportCity] ++Custom Lap: End: 92 Cities in Chaco [00:00:01.7916253] 
+Logger.Default Information: 60 : [ImportCity] Start: 70 Cities in Chubut
+Logger.Default Information: 61 : [ImportCity] ++Global Lap: End: 70 Cities in Chubut [00:00:15.7357115]
+Logger.Default Information: 62 : [ImportCity] ++Custom Lap: End: 70 Cities in Chubut [00:00:01.3595311] 
+Logger.Default Information: 63 : [ImportCity] Start: 515 Cities in Cordoba
+Logger.Default Information: 64 : [ImportCity] ++Global Lap: End: 515 Cities in Cordoba [00:00:28.2139808]
+Logger.Default Information: 65 : [ImportCity] ++Custom Lap: End: 515 Cities in Cordoba [00:00:12.4672839] !!!!!
+Logger.Default Information: 66 : [ImportCity] Start: 78 Cities in Corrientes
+Logger.Default Information: 67 : [ImportCity] ++Global Lap: End: 78 Cities in Corrientes [00:00:30.5635107]
+Logger.Default Information: 68 : [ImportCity] ++Custom Lap: End: 78 Cities in Corrientes [00:00:02.3387636] !!!!!
+Logger.Default Information: 69 : [ImportCity] Start: 169 Cities in EntreRios
+Logger.Default Information: 70 : [ImportCity] ++Global Lap: End: 169 Cities in EntreRios [00:00:35.3137410]
+Logger.Default Information: 71 : [ImportCity] ++Custom Lap: End: 169 Cities in EntreRios [00:00:04.7392004] !!!!!
+Logger.Default Information: 72 : [ImportCity] Start: 63 Cities in Formosa
+Logger.Default Information: 73 : [ImportCity] ++Global Lap: End: 63 Cities in Formosa [00:00:37.0416586]
+Logger.Default Information: 74 : [ImportCity] ++Custom Lap: End: 63 Cities in Formosa [00:00:01.7183964] 
+Logger.Default Information: 75 : [ImportCity] Start: 150 Cities in Jujuy
+Logger.Default Information: 76 : [ImportCity] ++Global Lap: End: 150 Cities in Jujuy [00:00:41.0932256]
+Logger.Default Information: 77 : [ImportCity] ++Custom Lap: End: 150 Cities in Jujuy [00:00:04.0420832] !!!!!
+Logger.Default Information: 78 : [ImportCity] Start: 90 Cities in LaPampa
+Logger.Default Information: 79 : [ImportCity] ++Global Lap: End: 90 Cities in LaPampa [00:00:43.6226153]
+Logger.Default Information: 80 : [ImportCity] ++Custom Lap: End: 90 Cities in LaPampa [00:00:02.5201724] !!!!!
+Logger.Default Information: 81 : [ImportCity] Start: 74 Cities in LaRioja
+Logger.Default Information: 82 : [ImportCity] ++Global Lap: End: 74 Cities in LaRioja [00:00:45.6654882]
+Logger.Default Information: 83 : [ImportCity] ++Custom Lap: End: 74 Cities in LaRioja [00:00:02.0310595] !!!!!
+Logger.Default Information: 84 : [ImportCity] Start: 151 Cities in Mendoza
+Logger.Default Information: 85 : [ImportCity] ++Global Lap: End: 151 Cities in Mendoza [00:00:50.0441915]
+Logger.Default Information: 86 : [ImportCity] ++Custom Lap: End: 151 Cities in Mendoza [00:00:04.3683761] !!!!!
+Logger.Default Information: 87 : [ImportCity] Start: 140 Cities in Misiones
+Logger.Default Information: 88 : [ImportCity] ++Global Lap: End: 140 Cities in Misiones [00:00:54.3083023]
+Logger.Default Information: 89 : [ImportCity] ++Custom Lap: End: 140 Cities in Misiones [00:00:04.2549266] !!!!!
+Logger.Default Information: 90 : [ImportCity] Start: 61 Cities in Neuquen
+Logger.Default Information: 91 : [ImportCity] ++Global Lap: End: 61 Cities in Neuquen [00:00:56.1780872]
+Logger.Default Information: 92 : [ImportCity] ++Custom Lap: End: 61 Cities in Neuquen [00:00:01.8609319] 
+Logger.Default Information: 93 : [ImportCity] Start: 147 Cities in RioNegro
+Logger.Default Information: 94 : [ImportCity] ++Global Lap: End: 147 Cities in RioNegro [00:01:00.7380155]
+Logger.Default Information: 95 : [ImportCity] ++Custom Lap: End: 147 Cities in RioNegro [00:00:04.5505320] !!!!!
+Logger.Default Information: 96 : [ImportCity] Start: 131 Cities in Salta
+Logger.Default Information: 97 : [ImportCity] ++Global Lap: End: 131 Cities in Salta [00:01:04.8387145]
+Logger.Default Information: 98 : [ImportCity] ++Custom Lap: End: 131 Cities in Salta [00:00:04.0899815] !!!!!
+Logger.Default Information: 99 : [ImportCity] Start: 80 Cities in SanJuan
+Logger.Default Information: 100 : [ImportCity] ++Global Lap: End: 80 Cities in SanJuan [00:01:08.0659459]
+Logger.Default Information: 101 : [ImportCity] ++Custom Lap: End: 80 Cities in SanJuan [00:00:03.2172618] !!!!!
+Logger.Default Information: 102 : [ImportCity] Start: 86 Cities in SanLuis
+Logger.Default Information: 103 : [ImportCity] ++Global Lap: End: 86 Cities in SanLuis [00:01:10.9978308]
+Logger.Default Information: 104 : [ImportCity] ++Custom Lap: End: 86 Cities in SanLuis [00:00:02.9213907] !!!!!
+Logger.Default Information: 105 : [ImportCity] Start: 28 Cities in SantaCruz
+Logger.Default Information: 106 : [ImportCity] ++Global Lap: End: 28 Cities in SantaCruz [00:01:11.9075112]
+Logger.Default Information: 107 : [ImportCity] ++Custom Lap: End: 28 Cities in SantaCruz [00:00:00.9007579] 
+Logger.Default Information: 108 : [ImportCity] Start: 381 Cities in SantaFe
+Logger.Default Information: 109 : [ImportCity] ++Global Lap: End: 381 Cities in SantaFe [00:01:25.5937759]
+Logger.Default Information: 110 : [ImportCity] ++Custom Lap: End: 381 Cities in SantaFe [00:00:13.6749143] !!!!!
+Logger.Default Information: 111 : [ImportCity] Start: 159 Cities in SantiagoDelEstero
+Logger.Default Information: 112 : [ImportCity] ++Global Lap: End: 159 Cities in SantiagoDelEstero [00:01:31.4902527]
+Logger.Default Information: 113 : [ImportCity] ++Custom Lap: End: 159 Cities in SantiagoDelEstero [00:00:05.8861480] !!!!!
+Logger.Default Information: 114 : [ImportCity] Start: 7 Cities in TierraDelFuego
+Logger.Default Information: 115 : [ImportCity] ++Global Lap: End: 7 Cities in TierraDelFuego [00:01:31.7378012]
+Logger.Default Information: 116 : [ImportCity] ++Custom Lap: End: 7 Cities in TierraDelFuego [00:00:00.2388604] 
+Logger.Default Information: 117 : [ImportCity] Start: 99 Cities in Tucuman
+Logger.Default Information: 118 : [ImportCity] ++Global Lap: End: 99 Cities in Tucuman [00:01:35.5585063]
+Logger.Default Information: 119 : [ImportCity] ++Custom Lap: End: 99 Cities in Tucuman [00:00:03.8086673] !!!!!
+Logger.Default Information: 120 : [ImportCity] ++Global Lap: End: 23 Cities. [00:01:35.5596760]
+Logger.Default Information: 121 : [ImportCity] ++Custom Lap: End: 23 Cities. [00:01:35.5584121] !!!!!
+Logger.Default Information: 122 : [ImportCity] ++Global Lap: <<<<<End process... [00:01:35.5598718]
+Logger.Default Information: 123 : [ImportProvider] >>>>>Init process...
+Logger.Default Information: 124 : [ImportProvider] Start: 2 Providers
+Logger.Default Information: 125 : [ImportProvider] ++Global Lap: Start: 2 Providers [00:00:00.3675091]
+Logger.Default Information: 126 : [ImportProvider] ++Global Lap: <<<<<End process... [00:00:00.3677347]
+Logger.Default Information: 127 : [ImportCustomer] >>>>>Init process...
+Logger.Default Information: 128 : [ImportCustomer] Start: 27 Customers
+Logger.Default Information: 129 : [ImportCustomer] ++Global Lap: End: 27 Customers [00:00:04.5023311]
+Logger.Default Information: 130 : [ImportCustomer] ++Global Lap: <<<<<End process... [00:00:04.5025780]
+Logger.Default Information: 131 : [ImportAreaCategorySubCategoryContainerProduct] >>>>>Init process...
+Logger.Default Information: 132 : [ImportAreaCategorySubCategoryContainerProduct] Start: 1 Area
+Logger.Default Information: 133 : [ImportAreaCategorySubCategoryContainerProduct] End: 1 Area
+Logger.Default Information: 134 : [ImportAreaCategorySubCategoryContainerProduct] Start: 268 Products
+Logger.Default Information: 135 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Bandejas Expandido created
+Logger.Default Information: 136 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Bandejas Extrusystem created
+Logger.Default Information: 137 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 138 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 139 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXT15 created
+Logger.Default Information: 140 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 1 created
+Logger.Default Information: 141 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXT17 created
+Logger.Default Information: 142 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 2 created
+Logger.Default Information: 143 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXT18 created
+Logger.Default Information: 144 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 3 created
+Logger.Default Information: 145 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXT19 created
+Logger.Default Information: 146 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 4 created
+Logger.Default Information: 147 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXT21 created
+Logger.Default Information: 148 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 5 created
+Logger.Default Information: 149 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 150 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXT25 created
+Logger.Default Information: 151 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 6 created
+Logger.Default Information: 152 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXT28 created
+Logger.Default Information: 153 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 7 created
+Logger.Default Information: 154 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 02263c98-7983-49b9-a1b8-7810f2be7470 created
+Logger.Default Information: 155 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 8 created
+Logger.Default Information: 156 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Obleas Extrusystem created
+Logger.Default Information: 157 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 158 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXTO15 created
+Logger.Default Information: 159 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 9 created
+Logger.Default Information: 160 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXTO17 created
+Logger.Default Information: 161 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 10 created
+Logger.Default Information: 162 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXTO18 created
+Logger.Default Information: 163 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 11 created
+Logger.Default Information: 164 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXTO19 created
+Logger.Default Information: 165 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 12 created
+Logger.Default Information: 166 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXTO25 created
+Logger.Default Information: 167 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 13 created
+Logger.Default Information: 168 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product EXTO28 created
+Logger.Default Information: 169 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 14 created
+Logger.Default Information: 170 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Contenedores Térmicos created
+Logger.Default Information: 171 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Contenedores de Comida created
+Logger.Default Information: 172 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product BECH created
+Logger.Default Information: 173 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 15 created
+Logger.Default Information: 174 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product BEHM created
+Logger.Default Information: 175 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 16 created
+Logger.Default Information: 176 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product BEP created
+Logger.Default Information: 177 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 17 created
+Logger.Default Information: 178 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 179 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART6JL created
+Logger.Default Information: 180 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 18 created
+Logger.Default Information: 181 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART8JL created
+Logger.Default Information: 182 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 19 created
+Logger.Default Information: 183 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART10JL created
+Logger.Default Information: 184 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 20 created
+Logger.Default Information: 185 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART12JL created
+Logger.Default Information: 186 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 21 created
+Logger.Default Information: 187 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART180 created
+Logger.Default Information: 188 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 22 created
+Logger.Default Information: 189 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART240 created
+Logger.Default Information: 190 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 23 created
+Logger.Default Information: 191 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART300 created
+Logger.Default Information: 192 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 24 created
+Logger.Default Information: 193 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART360 created
+Logger.Default Information: 194 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 25 created
+Logger.Default Information: 195 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART120 created
+Logger.Default Information: 196 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 26 created
+Logger.Default Information: 197 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DART4JL created
+Logger.Default Information: 198 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 27 created
+Logger.Default Information: 199 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 200 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PLAT TERM created
+Logger.Default Information: 201 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 28 created
+Logger.Default Information: 202 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 2742709a-0afc-4522-bbf5-2870f006b199 created
+Logger.Default Information: 203 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 29 created
+Logger.Default Information: 204 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Cubiertos y Utencillos created
+Logger.Default Information: 205 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Cucharas created
+Logger.Default Information: 206 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K6030B created
+Logger.Default Information: 207 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 30 created
+Logger.Default Information: 208 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 10394 created
+Logger.Default Information: 209 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 31 created
+Logger.Default Information: 210 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Tenedores created
+Logger.Default Information: 211 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product LB11V created
+Logger.Default Information: 212 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 32 created
+Logger.Default Information: 213 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Cuchillos created
+Logger.Default Information: 214 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product LB12V created
+Logger.Default Information: 215 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 33 created
+Logger.Default Information: 216 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Utencillos created
+Logger.Default Information: 217 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 218 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RBLM created
+Logger.Default Information: 219 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 34 created
+Logger.Default Information: 220 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 221 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product LB35 created
+Logger.Default Information: 222 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 35 created
+Logger.Default Information: 223 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 097ebf2c-87f6-41f8-949f-760f4e1becc1 created
+Logger.Default Information: 224 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 36 created
+Logger.Default Information: 225 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Vasos Plasticos created
+Logger.Default Information: 226 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory ZetaPlast created
+Logger.Default Information: 227 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 228 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K320PP01 created
+Logger.Default Information: 229 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 37 created
+Logger.Default Information: 230 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K320PP10 created
+Logger.Default Information: 231 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 38 created
+Logger.Default Information: 232 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 233 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 800 created
+Logger.Default Information: 234 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 39 created
+Logger.Default Information: 235 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 236 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 1000 created
+Logger.Default Information: 237 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 40 created
+Logger.Default Information: 238 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Prolix created
+Logger.Default Information: 239 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 240 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product VB180 created
+Logger.Default Information: 241 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 41 created
+Logger.Default Information: 242 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product VB220 created
+Logger.Default Information: 243 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 42 created
+Logger.Default Information: 244 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 245 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product VB300 created
+Logger.Default Information: 246 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 43 created
+Logger.Default Information: 247 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 248 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 500 created
+Logger.Default Information: 249 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 44 created
+Logger.Default Information: 250 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 10416 created
+Logger.Default Information: 251 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 45 created
+Logger.Default Information: 252 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product k4040 created
+Logger.Default Information: 253 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 46 created
+Logger.Default Information: 254 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 255 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product k374psc created
+Logger.Default Information: 256 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 47 created
+Logger.Default Information: 257 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product k374ps created
+Logger.Default Information: 258 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 48 created
+Logger.Default Information: 259 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Potes created
+Logger.Default Information: 260 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 261 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PN250 created
+Logger.Default Information: 262 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 49 created
+Logger.Default Information: 263 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Potes Ensaladeras Blister Cuban created
+Logger.Default Information: 264 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PN500 created
+Logger.Default Information: 265 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 50 created
+Logger.Default Information: 266 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product a9147e93-0d06-46b5-81a8-8d98e2734dfe created
+Logger.Default Information: 267 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 51 created
+Logger.Default Information: 268 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 269 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product ww2apet created
+Logger.Default Information: 270 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 52 created
+Logger.Default Information: 271 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 272 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 63ff8297-93d8-4800-b321-5d9033a9c20e created
+Logger.Default Information: 273 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 53 created
+Logger.Default Information: 274 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Blisters created
+Logger.Default Information: 275 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product W5BPET created
+Logger.Default Information: 276 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 54 created
+Logger.Default Information: 277 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Bases created
+Logger.Default Information: 278 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product E1100PET created
+Logger.Default Information: 279 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 55 created
+Logger.Default Information: 280 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Tapas created
+Logger.Default Information: 281 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product E1100TPET created
+Logger.Default Information: 282 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 56 created
+Logger.Default Information: 283 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 284 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TN088 created
+Logger.Default Information: 285 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 57 created
+Logger.Default Information: 286 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Torteras created
+Logger.Default Information: 287 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 288 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product bpt28b created
+Logger.Default Information: 289 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 58 created
+Logger.Default Information: 290 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product bpt28a created
+Logger.Default Information: 291 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 59 created
+Logger.Default Information: 292 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Servilletas created
+Logger.Default Information: 293 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 294 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product SAM290 created
+Logger.Default Information: 295 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 60 created
+Logger.Default Information: 296 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Servilletas Toallas Sulfito created
+Logger.Default Information: 297 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 1818 POT created
+Logger.Default Information: 298 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 61 created
+Logger.Default Information: 299 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 33X33POT created
+Logger.Default Information: 300 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 62 created
+Logger.Default Information: 301 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 1313TRANI created
+Logger.Default Information: 302 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 63 created
+Logger.Default Information: 303 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 1313POT created
+Logger.Default Information: 304 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 64 created
+Logger.Default Information: 305 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Toallas created
+Logger.Default Information: 306 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product POT400 created
+Logger.Default Information: 307 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 65 created
+Logger.Default Information: 308 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TI2500 created
+Logger.Default Information: 309 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 66 created
+Logger.Default Information: 310 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PDM40 created
+Logger.Default Information: 311 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 67 created
+Logger.Default Information: 312 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PDR400500 created
+Logger.Default Information: 313 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 68 created
+Logger.Default Information: 314 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Papel Higienico created
+Logger.Default Information: 315 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 316 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product POT300 created
+Logger.Default Information: 317 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 69 created
+Logger.Default Information: 318 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 319 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 44fac898-28c9-4451-b198-667788a670fd created
+Logger.Default Information: 320 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 70 created
+Logger.Default Information: 321 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product c15dac97-f648-44cd-8f23-2b2d2ac59e81 created
+Logger.Default Information: 322 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 71 created
+Logger.Default Information: 323 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Platos Precintos Sorbetes created
+Logger.Default Information: 324 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Platos created
+Logger.Default Information: 325 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 326 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product LB170 created
+Logger.Default Information: 327 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 72 created
+Logger.Default Information: 328 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 329 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product LB220 created
+Logger.Default Information: 330 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 73 created
+Logger.Default Information: 331 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Sorbetes created
+Logger.Default Information: 332 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product SOR1000 created
+Logger.Default Information: 333 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 74 created
+Logger.Default Information: 334 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product SORX500 created
+Logger.Default Information: 335 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 75 created
+Logger.Default Information: 336 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Precintos created
+Logger.Default Information: 337 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PRE10 created
+Logger.Default Information: 338 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 76 created
+Logger.Default Information: 339 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product FL500 created
+Logger.Default Information: 340 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 77 created
+Logger.Default Information: 341 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Precorte y Rendidora created
+Logger.Default Information: 342 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory BOBINAS 300 G created
+Logger.Default Information: 343 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product R1520 created
+Logger.Default Information: 344 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 78 created
+Logger.Default Information: 345 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product R1525 created
+Logger.Default Information: 346 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 79 created
+Logger.Default Information: 347 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 348 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product polimundi created
+Logger.Default Information: 349 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 80 created
+Logger.Default Information: 350 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory BOBINAS 750 G created
+Logger.Default Information: 351 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product R2030 created
+Logger.Default Information: 352 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 81 created
+Logger.Default Information: 353 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product R2535 created
+Logger.Default Information: 354 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 82 created
+Logger.Default Information: 355 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product R3040 created
+Logger.Default Information: 356 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 83 created
+Logger.Default Information: 357 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product R3545 created
+Logger.Default Information: 358 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 84 created
+Logger.Default Information: 359 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product R4050 created
+Logger.Default Information: 360 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 85 created
+Logger.Default Information: 361 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Estrella created
+Logger.Default Information: 362 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 363 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME2030 created
+Logger.Default Information: 364 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 86 created
+Logger.Default Information: 365 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME2535 created
+Logger.Default Information: 366 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 87 created
+Logger.Default Information: 367 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME3040 created
+Logger.Default Information: 368 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 88 created
+Logger.Default Information: 369 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME3545 created
+Logger.Default Information: 370 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 89 created
+Logger.Default Information: 371 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME4050 created
+Logger.Default Information: 372 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 90 created
+Logger.Default Information: 373 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME4060 created
+Logger.Default Information: 374 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 91 created
+Logger.Default Information: 375 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME4560 created
+Logger.Default Information: 376 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 92 created
+Logger.Default Information: 377 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RME5070 created
+Logger.Default Information: 378 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 93 created
+Logger.Default Information: 379 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory RL Rendidora created
+Logger.Default Information: 380 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RR1520 created
+Logger.Default Information: 381 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 94 created
+Logger.Default Information: 382 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RR1525 created
+Logger.Default Information: 383 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 95 created
+Logger.Default Information: 384 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RR2030 created
+Logger.Default Information: 385 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 96 created
+Logger.Default Information: 386 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 387 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RR2535 created
+Logger.Default Information: 388 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 97 created
+Logger.Default Information: 389 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RR3040 created
+Logger.Default Information: 390 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 98 created
+Logger.Default Information: 391 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RR4050 created
+Logger.Default Information: 392 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 99 created
+Logger.Default Information: 393 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product e2d34b11-4d19-4cce-865d-4343b66e8a8a created
+Logger.Default Information: 394 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 100 created
+Logger.Default Information: 395 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory RH created
+Logger.Default Information: 396 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RHR2030 created
+Logger.Default Information: 397 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 101 created
+Logger.Default Information: 398 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RHR2535 created
+Logger.Default Information: 399 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 102 created
+Logger.Default Information: 400 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product RHR3040 created
+Logger.Default Information: 401 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 103 created
+Logger.Default Information: 402 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product rh15x20 created
+Logger.Default Information: 403 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 104 created
+Logger.Default Information: 404 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product rhm3040 created
+Logger.Default Information: 405 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 105 created
+Logger.Default Information: 406 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product rhm2030 created
+Logger.Default Information: 407 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 106 created
+Logger.Default Information: 408 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product rhm4050 created
+Logger.Default Information: 409 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 107 created
+Logger.Default Information: 410 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product rhm25x35 created
+Logger.Default Information: 411 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 108 created
+Logger.Default Information: 412 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Emblocada created
+Logger.Default Information: 413 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 414 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PE2030 created
+Logger.Default Information: 415 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 109 created
+Logger.Default Information: 416 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Emblocada created
+Logger.Default Information: 417 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PE2535 created
+Logger.Default Information: 418 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 110 created
+Logger.Default Information: 419 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Emblocada created
+Logger.Default Information: 420 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PE3040 created
+Logger.Default Information: 421 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 111 created
+Logger.Default Information: 422 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Papel created
+Logger.Default Information: 423 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 424 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product IP4 created
+Logger.Default Information: 425 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 112 created
+Logger.Default Information: 426 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Bolsas created
+Logger.Default Information: 427 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product IP4A created
+Logger.Default Information: 428 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 113 created
+Logger.Default Information: 429 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product IP7 created
+Logger.Default Information: 430 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 114 created
+Logger.Default Information: 431 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K1LV created
+Logger.Default Information: 432 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 115 created
+Logger.Default Information: 433 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K2LV created
+Logger.Default Information: 434 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 116 created
+Logger.Default Information: 435 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K3 created
+Logger.Default Information: 436 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 117 created
+Logger.Default Information: 437 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K3V created
+Logger.Default Information: 438 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 118 created
+Logger.Default Information: 439 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product K4AV created
+Logger.Default Information: 440 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 119 created
+Logger.Default Information: 441 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product kpm bot created
+Logger.Default Information: 442 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 120 created
+Logger.Default Information: 443 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Carton created
+Logger.Default Information: 444 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory BANDEJAS DE CARTON GRIS-LÍNEA VERDE created
+Logger.Default Information: 445 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 446 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product V1 created
+Logger.Default Information: 447 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 121 created
+Logger.Default Information: 448 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Carton created
+Logger.Default Information: 449 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product V2 created
+Logger.Default Information: 450 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 122 created
+Logger.Default Information: 451 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product V3N created
+Logger.Default Information: 452 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 123 created
+Logger.Default Information: 453 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product V4 created
+Logger.Default Information: 454 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 124 created
+Logger.Default Information: 455 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product V5 created
+Logger.Default Information: 456 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 125 created
+Logger.Default Information: 457 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product V6 created
+Logger.Default Information: 458 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 126 created
+Logger.Default Information: 459 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product V7 created
+Logger.Default Information: 460 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 127 created
+Logger.Default Information: 461 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory CAJAS DE CARTÓN P/ PIZZA created
+Logger.Default Information: 462 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product MPGR100 created
+Logger.Default Information: 463 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 128 created
+Logger.Default Information: 464 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PGR100 created
+Logger.Default Information: 465 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 129 created
+Logger.Default Information: 466 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product LGC400 created
+Logger.Default Information: 467 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 130 created
+Logger.Default Information: 468 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product LGX400 created
+Logger.Default Information: 469 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 131 created
+Logger.Default Information: 470 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product NG0 created
+Logger.Default Information: 471 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 132 created
+Logger.Default Information: 472 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product NG1 created
+Logger.Default Information: 473 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 133 created
+Logger.Default Information: 474 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product NG2 created
+Logger.Default Information: 475 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 134 created
+Logger.Default Information: 476 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 10362 created
+Logger.Default Information: 477 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 135 created
+Logger.Default Information: 478 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 10363 created
+Logger.Default Information: 479 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 136 created
+Logger.Default Information: 480 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product cri11050 created
+Logger.Default Information: 481 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 137 created
+Logger.Default Information: 482 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product d7761428-e6ae-4c05-b60f-4e637bf370f0 created
+Logger.Default Information: 483 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 138 created
+Logger.Default Information: 484 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory CaJAS DE CARTÓN P/ PIZZA created
+Logger.Default Information: 485 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 1c7500a0-137f-4b72-86f3-9101f9aec95a created
+Logger.Default Information: 486 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 139 created
+Logger.Default Information: 487 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category CAMISETA Bolsa Riñon created
+Logger.Default Information: 488 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Camiseta created
+Logger.Default Information: 489 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TC4050RA created
+Logger.Default Information: 490 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 140 created
+Logger.Default Information: 491 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TC4050C created
+Logger.Default Information: 492 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 141 created
+Logger.Default Information: 493 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TC3040 created
+Logger.Default Information: 494 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 142 created
+Logger.Default Information: 495 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 496 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PC2030 created
+Logger.Default Information: 497 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 143 created
+Logger.Default Information: 498 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TC5070 created
+Logger.Default Information: 499 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 144 created
+Logger.Default Information: 500 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TC3040C created
+Logger.Default Information: 501 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 145 created
+Logger.Default Information: 502 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product tc60x80 created
+Logger.Default Information: 503 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 146 created
+Logger.Default Information: 504 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product TC4560 created
+Logger.Default Information: 505 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 147 created
+Logger.Default Information: 506 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 69b68a1c-7d01-4478-b990-1b96dc28276d created
+Logger.Default Information: 507 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 148 created
+Logger.Default Information: 508 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 805ab67d-3a22-4f6e-a208-eeb7f47ddd3e created
+Logger.Default Information: 509 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 149 created
+Logger.Default Information: 510 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Bolsa Riñon created
+Logger.Default Information: 511 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product ppr3040 created
+Logger.Default Information: 512 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 150 created
+Logger.Default Information: 513 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product ppr2535 created
+Logger.Default Information: 514 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 151 created
+Logger.Default Information: 515 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product ppr2030 created
+Logger.Default Information: 516 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 152 created
+Logger.Default Information: 517 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory POLIPROPILENO created
+Logger.Default Information: 518 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1015 created
+Logger.Default Information: 519 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 153 created
+Logger.Default Information: 520 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category POLIPROPILENO created
+Logger.Default Information: 521 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1020 created
+Logger.Default Information: 522 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 154 created
+Logger.Default Information: 523 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1025 created
+Logger.Default Information: 524 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 155 created
+Logger.Default Information: 525 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1030 created
+Logger.Default Information: 526 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 156 created
+Logger.Default Information: 527 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1035 created
+Logger.Default Information: 528 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 157 created
+Logger.Default Information: 529 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1215 created
+Logger.Default Information: 530 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 158 created
+Logger.Default Information: 531 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1220 created
+Logger.Default Information: 532 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 159 created
+Logger.Default Information: 533 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1225 created
+Logger.Default Information: 534 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 160 created
+Logger.Default Information: 535 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1230 created
+Logger.Default Information: 536 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 161 created
+Logger.Default Information: 537 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1235 created
+Logger.Default Information: 538 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 162 created
+Logger.Default Information: 539 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1240 created
+Logger.Default Information: 540 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 163 created
+Logger.Default Information: 541 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1320 created
+Logger.Default Information: 542 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 164 created
+Logger.Default Information: 543 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1325 created
+Logger.Default Information: 544 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 165 created
+Logger.Default Information: 545 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1330 created
+Logger.Default Information: 546 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 166 created
+Logger.Default Information: 547 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1520 created
+Logger.Default Information: 548 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 167 created
+Logger.Default Information: 549 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1525 created
+Logger.Default Information: 550 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 168 created
+Logger.Default Information: 551 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1530 created
+Logger.Default Information: 552 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 169 created
+Logger.Default Information: 553 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1535 created
+Logger.Default Information: 554 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 170 created
+Logger.Default Information: 555 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1540 created
+Logger.Default Information: 556 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 171 created
+Logger.Default Information: 557 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1720 created
+Logger.Default Information: 558 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 172 created
+Logger.Default Information: 559 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1725 created
+Logger.Default Information: 560 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 173 created
+Logger.Default Information: 561 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1730 created
+Logger.Default Information: 562 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 174 created
+Logger.Default Information: 563 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1735 created
+Logger.Default Information: 564 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 175 created
+Logger.Default Information: 565 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP1825 created
+Logger.Default Information: 566 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 176 created
+Logger.Default Information: 567 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2020 created
+Logger.Default Information: 568 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 177 created
+Logger.Default Information: 569 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2025 created
+Logger.Default Information: 570 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 178 created
+Logger.Default Information: 571 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2030 created
+Logger.Default Information: 572 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 179 created
+Logger.Default Information: 573 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2035 created
+Logger.Default Information: 574 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 180 created
+Logger.Default Information: 575 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2040 created
+Logger.Default Information: 576 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 181 created
+Logger.Default Information: 577 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2045 created
+Logger.Default Information: 578 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 182 created
+Logger.Default Information: 579 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2060BD created
+Logger.Default Information: 580 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 183 created
+Logger.Default Information: 581 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2230 created
+Logger.Default Information: 582 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 184 created
+Logger.Default Information: 583 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2235 created
+Logger.Default Information: 584 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 185 created
+Logger.Default Information: 585 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2240 created
+Logger.Default Information: 586 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 186 created
+Logger.Default Information: 587 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2530 created
+Logger.Default Information: 588 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 187 created
+Logger.Default Information: 589 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2535 created
+Logger.Default Information: 590 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 188 created
+Logger.Default Information: 591 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2540 created
+Logger.Default Information: 592 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 189 created
+Logger.Default Information: 593 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP2545 created
+Logger.Default Information: 594 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 190 created
+Logger.Default Information: 595 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3035 created
+Logger.Default Information: 596 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 191 created
+Logger.Default Information: 597 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3040 created
+Logger.Default Information: 598 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 192 created
+Logger.Default Information: 599 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3045 created
+Logger.Default Information: 600 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 193 created
+Logger.Default Information: 601 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3050 created
+Logger.Default Information: 602 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 194 created
+Logger.Default Information: 603 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3535 created
+Logger.Default Information: 604 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 195 created
+Logger.Default Information: 605 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3540 created
+Logger.Default Information: 606 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 196 created
+Logger.Default Information: 607 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3545 created
+Logger.Default Information: 608 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 197 created
+Logger.Default Information: 609 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP3550 created
+Logger.Default Information: 610 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 198 created
+Logger.Default Information: 611 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP4050 created
+Logger.Default Information: 612 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 199 created
+Logger.Default Information: 613 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP4060 created
+Logger.Default Information: 614 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 200 created
+Logger.Default Information: 615 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP410 created
+Logger.Default Information: 616 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 201 created
+Logger.Default Information: 617 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP420 created
+Logger.Default Information: 618 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 202 created
+Logger.Default Information: 619 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP425 created
+Logger.Default Information: 620 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 203 created
+Logger.Default Information: 621 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP430 created
+Logger.Default Information: 622 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 204 created
+Logger.Default Information: 623 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP4560 created
+Logger.Default Information: 624 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 205 created
+Logger.Default Information: 625 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP5060 created
+Logger.Default Information: 626 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 206 created
+Logger.Default Information: 627 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP5070 created
+Logger.Default Information: 628 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 207 created
+Logger.Default Information: 629 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP510 created
+Logger.Default Information: 630 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 208 created
+Logger.Default Information: 631 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP515 created
+Logger.Default Information: 632 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 209 created
+Logger.Default Information: 633 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP520 created
+Logger.Default Information: 634 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 210 created
+Logger.Default Information: 635 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP525 created
+Logger.Default Information: 636 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 211 created
+Logger.Default Information: 637 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP530 created
+Logger.Default Information: 638 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 212 created
+Logger.Default Information: 639 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP6090PER created
+Logger.Default Information: 640 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 213 created
+Logger.Default Information: 641 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP610 created
+Logger.Default Information: 642 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 214 created
+Logger.Default Information: 643 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP615 created
+Logger.Default Information: 644 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 215 created
+Logger.Default Information: 645 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP620 created
+Logger.Default Information: 646 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 216 created
+Logger.Default Information: 647 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP625 created
+Logger.Default Information: 648 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 217 created
+Logger.Default Information: 649 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP630 created
+Logger.Default Information: 650 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 218 created
+Logger.Default Information: 651 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP710 created
+Logger.Default Information: 652 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 219 created
+Logger.Default Information: 653 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP715 created
+Logger.Default Information: 654 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 220 created
+Logger.Default Information: 655 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP720 created
+Logger.Default Information: 656 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 221 created
+Logger.Default Information: 657 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP810 created
+Logger.Default Information: 658 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 222 created
+Logger.Default Information: 659 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP812 created
+Logger.Default Information: 660 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 223 created
+Logger.Default Information: 661 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP812.5 created
+Logger.Default Information: 662 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 224 created
+Logger.Default Information: 663 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP815 created
+Logger.Default Information: 664 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 225 created
+Logger.Default Information: 665 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP820 created
+Logger.Default Information: 666 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 226 created
+Logger.Default Information: 667 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP825 created
+Logger.Default Information: 668 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 227 created
+Logger.Default Information: 669 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PPP830 created
+Logger.Default Information: 670 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 228 created
+Logger.Default Information: 671 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category RESIDUOS Y CONSORCIO created
+Logger.Default Information: 672 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Residuo created
+Logger.Default Information: 673 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 674 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DPMRP4560 created
+Logger.Default Information: 675 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 229 created
+Logger.Default Information: 676 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DPMRP5070 created
+Logger.Default Information: 677 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 230 created
+Logger.Default Information: 678 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Consorcio created
+Logger.Default Information: 679 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DPMRP6090 created
+Logger.Default Information: 680 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 231 created
+Logger.Default Information: 681 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DPMRP80110 created
+Logger.Default Information: 682 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 232 created
+Logger.Default Information: 683 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product DPMRP90120 created
+Logger.Default Information: 684 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 233 created
+Logger.Default Information: 685 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Folex created
+Logger.Default Information: 686 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Polimundi Laminas created
+Logger.Default Information: 687 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PL2537 created
+Logger.Default Information: 688 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 234 created
+Logger.Default Information: 689 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PL2025 created
+Logger.Default Information: 690 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 235 created
+Logger.Default Information: 691 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Films Guantes Aluminio created
+Logger.Default Information: 692 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Film created
+Logger.Default Information: 693 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PVC38COD300 created
+Logger.Default Information: 694 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 236 created
+Logger.Default Information: 695 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PVC39R300 created
+Logger.Default Information: 696 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 237 created
+Logger.Default Information: 697 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product PVC38SUPER300 created
+Logger.Default Information: 698 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 238 created
+Logger.Default Information: 699 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Rollo created
+Logger.Default Information: 700 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 80202 created
+Logger.Default Information: 701 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 239 created
+Logger.Default Information: 702 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Guante created
+Logger.Default Information: 703 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product GULATEXC created
+Logger.Default Information: 704 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 240 created
+Logger.Default Information: 705 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product GULATEXG created
+Logger.Default Information: 706 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 241 created
+Logger.Default Information: 707 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product GULATEXM created
+Logger.Default Information: 708 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 242 created
+Logger.Default Information: 709 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product IMPG-100 created
+Logger.Default Information: 710 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 243 created
+Logger.Default Information: 711 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory Rollo created
+Logger.Default Information: 712 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product NPALUM5 created
+Logger.Default Information: 713 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 244 created
+Logger.Default Information: 714 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product NPMANT5 created
+Logger.Default Information: 715 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 245 created
+Logger.Default Information: 716 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product ALUM 1 created
+Logger.Default Information: 717 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 246 created
+Logger.Default Information: 718 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory BANDEJAS MICRO prolix created
+Logger.Default Information: 719 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 103PPP created
+Logger.Default Information: 720 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 247 created
+Logger.Default Information: 721 : [ImportAreaCategorySubCategoryContainerProduct] Log: Category Bandejas Plasticas created
+Logger.Default Information: 722 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 723 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 105PPP created
+Logger.Default Information: 724 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 248 created
+Logger.Default Information: 725 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 103rpp created
+Logger.Default Information: 726 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 249 created
+Logger.Default Information: 727 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 103ppt created
+Logger.Default Information: 728 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 250 created
+Logger.Default Information: 729 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 105RPPR created
+Logger.Default Information: 730 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 251 created
+Logger.Default Information: 731 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 105RPPRV created
+Logger.Default Information: 732 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 252 created
+Logger.Default Information: 733 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 105RPPT created
+Logger.Default Information: 734 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 253 created
+Logger.Default Information: 735 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 105RPPTV created
+Logger.Default Information: 736 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 254 created
+Logger.Default Information: 737 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 102RPP created
+Logger.Default Information: 738 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 255 created
+Logger.Default Information: 739 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 103PPP created
+Logger.Default Information: 740 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 256 created
+Logger.Default Information: 741 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 106OPPA created
+Logger.Default Information: 742 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 257 created
+Logger.Default Information: 743 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 106OPPB created
+Logger.Default Information: 744 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 258 created
+Logger.Default Information: 745 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 107PPP created
+Logger.Default Information: 746 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 259 created
+Logger.Default Information: 747 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 748 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 101RPP created
+Logger.Default Information: 749 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 260 created
+Logger.Default Information: 750 : [ImportAreaCategorySubCategoryContainerProduct] Log: SubCategory FRIO created
+Logger.Default Information: 751 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 752 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 101PS created
+Logger.Default Information: 753 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 261 created
+Logger.Default Information: 754 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 755 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 102PROL created
+Logger.Default Information: 756 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 262 created
+Logger.Default Information: 757 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 103PROL created
+Logger.Default Information: 758 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 263 created
+Logger.Default Information: 759 : [ImportAreaCategorySubCategoryContainerProduct] Log: Embase Al por mayor created
+Logger.Default Information: 760 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 104PROL created
+Logger.Default Information: 761 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 264 created
+Logger.Default Information: 762 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 105PROL created
+Logger.Default Information: 763 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 265 created
+Logger.Default Information: 764 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 106PROLV created
+Logger.Default Information: 765 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 266 created
+Logger.Default Information: 766 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product 107PROL created
+Logger.Default Information: 767 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 267 created
+Logger.Default Information: 768 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product ck105n created
+Logger.Default Information: 769 : [ImportAreaCategorySubCategoryContainerProduct] Log: Product Price 268 created
+Logger.Default Information: 770 : [ImportAreaCategorySubCategoryContainerProduct] End: 268 Products
+Logger.Default Information: 771 : [ImportAreaCategorySubCategoryContainerProduct] ++Global Lap: <<<<<End process... [00:00:29.7686465]
