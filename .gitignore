@@ -1,2 +1,7 @@
 
 \.svn/
+.vs/SAC.Stock/v17/.suo
+*.dll
+*.vsidx
+/.vs/SAC.Stock/v17/.suo
+/.vs/SAC.Stock/v17/DocumentLayout.json
